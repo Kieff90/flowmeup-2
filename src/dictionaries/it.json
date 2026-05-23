@@ -16,6 +16,32 @@
     "headline": "Agenti configurati sul tuo processo. Parlano con il tuo team. Salvano dove salvi già tu.",
     "body": "Il commerciale manda un messaggio vocale su WhatsApp. Il lead è salvato. Nessuna app da scaricare, nessun corso, nessun cambio di workflow. Gli agenti lavorano dove lavora già il tuo team: su WhatsApp, su Excel, sui fogli che usi da anni. Flowmeup configura tutto. Il tuo team comincia a usarli nel giro di una settimana."
   },
+  "delivery": {
+    "headline": "Raccontaci il tuo processo. Noi configuriamo. Sei operativo entro una settimana.",
+    "subheadline": "Done-for-you. Il tuo team non installa nulla e non segue nessun corso. Flowmeup si occupa di tutto."
+  },
+  "pricing": {
+    "headline": "Prezzi chiari. Paghi solo quello che usi.",
+    "setup": "Setup una tantum: €300 — include configurazione, integrazione con i tuoi dati, e onboarding del team.",
+    "noBind": "Poi paghi solo gli agenti che attivi, mese per mese. Nessun contratto annuale.",
+    "cta": "Scopri cosa ti serve"
+  },
+  "contact": {
+    "headline": "Parliamo del tuo processo.",
+    "subheadline": "Nessun demo preregistrato. Nessun trial self-service. Una chiamata di 30 minuti in cui capiamo come lavora il tuo team e se Flowmeup fa al caso tuo.",
+    "fields": {
+      "name": "Nome",
+      "company": "Azienda",
+      "role": "Ruolo",
+      "sector": "Settore",
+      "message": "Messaggio",
+      "messagePlaceholder": "Es. Abbiamo 4 commerciali in campo, usiamo Excel per i lead, WhatsApp per comunicare."
+    },
+    "submit": "Inviami il tuo processo",
+    "calendarLink": "Oppure scegli direttamente un orario",
+    "success": "Ricevuto. Ti scriviamo entro 24 ore per confermare l'orario.",
+    "error": "Si è verificato un errore. Riprova tra qualche istante."
+  },
   "footer": {
     "copyright": "© 2025 Flowmeup. Tutti i diritti riservati."
   }
