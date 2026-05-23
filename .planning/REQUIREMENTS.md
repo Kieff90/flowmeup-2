@@ -48,10 +48,10 @@
 - [ ] **TECH-03**: Open Graph tags per condivisione social
 - [ ] **TECH-04**: Build ottimizzata: immagini WebP/srcset, font loading ottimizzato, LCP < 2.5s
 
-### SEO & Deploy
+### SEO & GEO
 
-- [ ] **SEO-01**: Schema markup JSON-LD (Organization, Product/Service)
-- [ ] **DEPL-01**: Deploy su dominio definitivo (o staging review-ready)
+- [ ] **SEO-01**: Schema markup JSON-LD (Organization, Product/Service) — valido al Google Rich Results Test
+- [ ] **GEO-01**: Ottimizzazione per AI search engines (ChatGPT, Perplexity, Gemini, Claude): FAQ section, entity markup, E-E-A-T signals, contenuto strutturato citabile
 
 ---
 
@@ -86,27 +86,47 @@
 
 ## Skill Usage Map
 
-Skill disponibili per UX/UI/animazione/landing (da `~/.claude/skills/`):
+Skill rilevanti per questo progetto (da `~/.claude/skills/`) — analisi completa di tutte le skill installate:
 
-| # | Skill | Quando usarla | Fase |
-|---|-------|---------------|------|
-| 1 | `ui-ux-pro-max` | **Prima di tutto.** Genera design system completo: pattern, stile, colori, tipografia, regole animazione per B2B Italian SMB. Comando: `--design-system --persist` | SPEC-02, DSGN-01 |
-| 2 | `copywriting` | Scrivere e ottimizzare il copy per ogni sezione. Usa dopo che il design direction è definito. | SPEC-04, SPEC-05 |
-| 3 | `prototype` | Se emergono 2+ opzioni di design radicalmente diverse, build throwaway UI per validare prima del codice production. | SPEC-02 (opzionale) |
-| 4 | `impeccable` | **Design implementation & refinement.** Sub-comandi utili: `/impeccable craft` (build da zero), `/impeccable shape` (definire struttura), `/impeccable animate` (aggiungere animazioni), `/impeccable colorize` (raffinare palette), `/impeccable layout` (layout review), `/impeccable audit` (UX review). Richiede PRODUCT.md + DESIGN.md nel progetto. | LAND-01–08, DSGN-01–05 |
-| 5 | `frontend-patterns` | Pattern React/Next.js: composizione componenti, state, Framer Motion animations, performance (memoization, code splitting, virtualization). | TECH-01, DSGN-03 |
-| 6 | `seo-geo` | SEO audit + schema markup + meta tag + GEO optimization (visibility su AI search engines). Usare DOPO il build. | SEO-01, TECH-02–03 |
-| 7 | `humanizer` | Passaggio finale sul copy: rende il testo più naturale e meno "marketing-speak". | SPEC-04, SPEC-05 (post-draft) |
+### Fase 1 — Pre-build / Spec & Concept
 
-**Ordine raccomandato:**
-1. `ui-ux-pro-max` → design system
-2. `copywriting` → draft copy IT + EN
-3. `prototype` → se serve validare opzioni design
-4. `impeccable craft/shape` → build struttura landing
-5. `frontend-patterns` → implementazione componenti + animazioni
-6. `impeccable animate/colorize/audit` → refinement
-7. `humanizer` → polish copy finale
-8. `seo-geo` → ottimizzazione post-build
+| Ordine | Skill | Cosa fa | Req target |
+|--------|-------|---------|------------|
+| 1 | `brainstorming` | **Obbligatoria prima di qualsiasi lavoro creativo.** Esplora requisiti e user intent, valida design prima dell'implementazione. Hard gate: nessuna implementazione finché non c'è design approvato. | SPEC-01, SPEC-02 |
+| 2 | `ui-ux-pro-max` | Genera design system completo: 67 stili, 96 palette, 57 font pairing, regole animazione, landing page patterns per B2B Italian SMB. Comando principale: `--design-system --persist`. Crea `design-system/MASTER.md` riutilizzabile. | SPEC-02, DSGN-01 |
+| 3 | `copywriting` | Scrive copy marketing per tutte e 8 le sezioni (hero, problem, solution, agents, differentiator, delivery, pricing, CTA) in IT e EN. Usa dopo che la direction è definita. | SPEC-04, SPEC-05 |
+| 4 | `writing-voice` | Edita testo rimuovendo pattern AI, aggiungendo voce autentica. Modalità EDIT su copy già scritto. Regola assoluta: mai em dash. | SPEC-04, SPEC-05 (post-draft) |
+| 5 | `humanizer` | Rimuove 9 pattern di scrittura AI (em dash, "rule of three", vocabulary AI, ecc.). Basato su Wikipedia "Signs of AI writing". Passaggio finale sul copy. | SPEC-04, SPEC-05 (post-draft) |
+
+### Fase 2 — Build Landing Page
+
+| Ordine | Skill | Cosa fa | Req target |
+|--------|-------|---------|------------|
+| 6 | `prototype` | Build throwaway UI con 2+ varianti design su route singola. Usa se emergono opzioni radicalmente diverse prima del codice production. | SPEC-02 (opzionale) |
+| 7 | `impeccable shape` | Definisce struttura, gerarchia visiva, information architecture prima del build. Richiede `PRODUCT.md` + `DESIGN.md` nel progetto. | LAND-01–08 |
+| 8 | `impeccable craft` | Build produzione da zero — codice frontend reale, scelte design nette. Sub-comandi utili: `craft`, `shape`, `animate`, `colorize`, `layout`, `audit`, `overdrive`, `bolder`, `quieter`. | LAND-01–08, DSGN-01–05 |
+| 9 | `frontend-patterns` | Pattern React/Next.js: composizione componenti, Framer Motion animations, performance (code splitting, lazy loading, memoization), forms, accessibility keyboard nav. | TECH-01, DSGN-03, CONV-01 |
+| 10 | `impeccable animate` | Aggiunge animazioni e micro-interazioni (hero entrance, scroll reveals, hover states). Separato dal `craft` per iterare solo sull'animazione. | DSGN-03 |
+| 11 | `impeccable audit` | UX review: contrasto, cognitive load, responsive behavior, accessibility, interaction design. Usare prima della consegna di Fase 2. | DSGN-05 |
+| 12 | `e2e-testing` | Test end-to-end dei flussi critici: form submission, language switch IT/EN, calendar link, responsive behavior. | CONV-01–03, DSGN-04 |
+
+### Fase 3 — SEO & GEO
+
+| Ordine | Skill | Cosa fa | Req target |
+|--------|-------|---------|------------|
+| 13 | `seo-geo` | SEO tradizionale + GEO (Generative Engine Optimization). Meta tag, schema markup JSON-LD, Open Graph. GEO: ottimizzazione per essere citati da ChatGPT, Perplexity, Gemini, Claude, Copilot. Include audit script, keyword research, structured content per AI citation. | SEO-01, GEO-01, TECH-02, TECH-03 |
+
+### Skill escluse (non rilevanti per questo progetto)
+
+| Skill | Motivo esclusione |
+|-------|-------------------|
+| `liquid-glass-design` | iOS 26 / SwiftUI only — non applicabile a web |
+| `swiftui-patterns` | iOS only |
+| `backend-patterns`, `django-*`, `springboot-*`, `golang-*`, `java-*` | Backend — non serve per landing page statica |
+| `deployment-patterns` | Deploy gestito dall'utente |
+| `database-migrations`, `postgres-patterns`, `clickhouse-io` | Database — fuori scope |
+| `linkedin-post-writer`, `articolo`, `banner-linkedin` | Social content — post-launch |
+| `pedro-linkedin-pptx`, `pptx`, `pdf`, `xlsx`, `docx` | Document generation — fuori scope |
 
 ---
 
@@ -141,7 +161,7 @@ Skill disponibili per UX/UI/animazione/landing (da `~/.claude/skills/`):
 | TECH-03 | Phase 3 | Pending |
 | TECH-04 | Phase 3 | Pending |
 | SEO-01 | Phase 3 | Pending |
-| DEPL-01 | Phase 3 | Pending |
+| GEO-01 | Phase 3 | Pending |
 
 **Coverage:**
 - v1 requirements: 28 total
@@ -150,4 +170,4 @@ Skill disponibili per UX/UI/animazione/landing (da `~/.claude/skills/`):
 
 ---
 *Requirements defined: 2026-05-23*
-*Last updated: 2026-05-23 after initial definition from spec.md v1.0*
+*Last updated: 2026-05-23 — Traceability confirmed against ROADMAP.md (Phase 1: 6 reqs, Phase 2: 17 reqs, Phase 3: 5 reqs)*
