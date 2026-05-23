@@ -49,7 +49,7 @@ Plans:
 **Plans**: 6 plans
 
 Plans:
-- [ ] 02-01-PLAN.md — Next.js 15 scaffold, Tailwind v4 tokens, /[lang] i18n routing (TECH-01)
+- [x] 02-01-PLAN.md — Next.js 15 scaffold, Tailwind v4 tokens, /[lang] i18n routing (TECH-01) — completed 2026-05-23
 - [ ] 02-02-PLAN.md — Design system primitives, Navbar/Footer, Hero/Problem/Solution sections (DSGN-01, LAND-01, LAND-02, LAND-03)
 - [ ] 02-03-PLAN.md — Agent cards section (4 cards, LIVE/COMING SOON badges) + Differentiator section (LAND-04, LAND-05)
 - [ ] 02-04-PLAN.md — Delivery, Pricing, Contact form sections + language switcher (LAND-06, LAND-07, LAND-08, DSGN-04, CONV-01, CONV-02, CONV-03)
@@ -84,5 +84,5 @@ Phases execute in numeric order: 1 → 2 → 3
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Spec & Concept | 3/3 | Complete | 2026-05-23 |
-| 2. Build Landing Page | 0/TBD | Not started | - |
+| 2. Build Landing Page | 1/6 | In progress | - |
 | 3. SEO & GEO | 0/TBD | Not started | - |

@@ -43,7 +43,7 @@
 
 ### Technical
 
-- [ ] **TECH-01**: Progetto scaffoldato con stack scelto in SPEC-06
+- [x] **TECH-01**: Progetto scaffoldato con stack scelto in SPEC-06
 - [ ] **TECH-02**: Meta tag base (title, description, canonical) per IT e EN
 - [ ] **TECH-03**: Open Graph tags per condivisione social
 - [ ] **TECH-04**: Build ottimizzata: immagini WebP/srcset, font loading ottimizzato, LCP < 2.5s
