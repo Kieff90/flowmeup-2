@@ -4,13 +4,13 @@ milestone: v1.0
 milestone_name: milestone
 status: completed
 stopped_at: Completed 02-03-PLAN.md — AgentCards section + Differentiator section
-last_updated: "2026-05-23T13:02:36.755Z"
+last_updated: "2026-05-23T16:44:25.272Z"
 last_activity: 2026-05-23 — Next.js 15 scaffold complete (TECH-01). /it and /en routes live. Tailwind v4 tokens configured.
 progress:
   total_phases: 3
-  completed_phases: 1
+  completed_phases: 2
   total_plans: 9
-  completed_plans: 6
+  completed_plans: 9
   percent: 44
 ---
 
