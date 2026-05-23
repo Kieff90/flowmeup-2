@@ -46,7 +46,15 @@ Plans:
   3. Hero entrance animation, scroll reveals, and agent card hover states are visible and smooth (DSGN-03)
   4. Contact form submits successfully and shows a confirmation state; calendar link opens correctly (CONV-01, CONV-02, CONV-03)
   5. Accessibility passes baseline: 4.5:1 contrast ratio, all images have alt text, keyboard navigation works (DSGN-05)
-**Plans**: TBD
+**Plans**: 6 plans
+
+Plans:
+- [ ] 02-01-PLAN.md — Next.js 15 scaffold, Tailwind v4 tokens, /[lang] i18n routing (TECH-01)
+- [ ] 02-02-PLAN.md — Design system primitives, Navbar/Footer, Hero/Problem/Solution sections (DSGN-01, LAND-01, LAND-02, LAND-03)
+- [ ] 02-03-PLAN.md — Agent cards section (4 cards, LIVE/COMING SOON badges) + Differentiator section (LAND-04, LAND-05)
+- [ ] 02-04-PLAN.md — Delivery, Pricing, Contact form sections + language switcher (LAND-06, LAND-07, LAND-08, DSGN-04, CONV-01, CONV-02, CONV-03)
+- [ ] 02-05-PLAN.md — Framer Motion animations (scroll reveals, stagger, hover states) + responsive polish (DSGN-02, DSGN-03)
+- [ ] 02-06-PLAN.md — Accessibility audit and fixes + human visual checkpoint (DSGN-05)
 
 ### Phase 3: SEO & GEO
 **Goal**: Landing page ottimizzata per motori di ricerca tradizionali e AI search engines (ChatGPT, Perplexity, Gemini, Claude); deploy gestito dall'utente
@@ -58,7 +66,15 @@ Plans:
   3. LCP < 2.5s su mobile — immagini WebP/srcset, nessun font layout shift (TECH-04)
   4. Schema markup JSON-LD valido — passa Google Rich Results Test (SEO-01)
   5. FAQ section presente, entity markup corretto, E-E-A-T signals visibili — la landing può essere citata da AI search engines come fonte autorevole (GEO-01)
-**Plans**: TBD
+**Plans**: 6 plans
+
+Plans:
+- [ ] 02-01-PLAN.md — Next.js 15 scaffold, Tailwind v4 tokens, /[lang] i18n routing (TECH-01)
+- [ ] 02-02-PLAN.md — Design system primitives, Navbar/Footer, Hero/Problem/Solution sections (DSGN-01, LAND-01, LAND-02, LAND-03)
+- [ ] 02-03-PLAN.md — Agent cards section (4 cards, LIVE/COMING SOON badges) + Differentiator section (LAND-04, LAND-05)
+- [ ] 02-04-PLAN.md — Delivery, Pricing, Contact form sections + language switcher (LAND-06, LAND-07, LAND-08, DSGN-04, CONV-01, CONV-02, CONV-03)
+- [ ] 02-05-PLAN.md — Framer Motion animations (scroll reveals, stagger, hover states) + responsive polish (DSGN-02, DSGN-03)
+- [ ] 02-06-PLAN.md — Accessibility audit and fixes + human visual checkpoint (DSGN-05)
 
 ## Progress
 
