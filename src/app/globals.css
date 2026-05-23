@@ -1,26 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
 @import "tailwindcss";
+@config "../../tailwind.config.ts";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Semantic tokens */
+  --color-background:              #F8FAFC;
+  --color-surface:                 #FFFFFF;
+  --color-surface-alt:             #F1F5F9;
+  --color-text-primary:            #0F172A;
+  --color-text-secondary:          #475569;
+  --color-text-muted:              #94A3B8;
+  --color-text-on-dark:            #FFFFFF;
+  --color-text-on-dark-secondary:  #93C5FD;
+  --color-border:                  #E2E8F0;
+  --color-border-strong:           #CBD5E1;
+  --color-primary:                 #0F2349;
+  --color-primary-dark:            #071730;
+  --color-accent:                  #F59E0B;
+  --color-accent-hover:            #D97706;
+  --color-live-badge:              #22C55E;
+  --color-live-badge-text:         #FFFFFF;
+  --color-coming-soon-badge:       #CBD5E1;
+  --color-coming-soon-badge-text:  #475569;
+  --color-error:                   #EF4444;
+  --color-focus-ring:              #FBBF24;
+
+  /* Typography */
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+
+  /* Base unit */
+  --space-unit: 8px;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 400ms ease-out, transform 400ms ease-out;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
