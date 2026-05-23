@@ -1,0 +1,22 @@
+{
+  "navbar": {
+    "cta": "Let's talk about your process"
+  },
+  "hero": {
+    "headline": "Your sales rep logs a lead in 90 seconds. From their phone. While driving.",
+    "subheadline": "For business owners with field sales teams: leads don't go cold because your reps aren't working. They go cold because no one opens their records from the car between appointments. Flowmeup fixes that. Nothing to install. Nothing to change.",
+    "cta": "Let's talk about your process"
+  },
+  "problem": {
+    "headline": "Every day your salespeople lose hours updating spreadsheets and records. On a good day.",
+    "para1": "The meeting ends. The rep gets in the car. Whatever system they use to keep records — it's back at the desk. \"I'll update it tonight\" — but tonight it doesn't happen. The lead sits there. You find out two weeks later when someone asks about the account and nobody has notes.",
+    "para2": "This isn't a discipline problem. It's a friction problem: too many steps between when something happens in the field and when it gets recorded anywhere."
+  },
+  "solution": {
+    "headline": "AI agents built around your process. They talk to your team. They save where you already save.",
+    "body": "Your rep sends a voice note on WhatsApp. The lead is saved. No app to download, no training session, no new workflow. The agents work where your team already works: WhatsApp, Excel, the spreadsheets you've used for years. Flowmeup sets everything up. Your team is running within a week."
+  },
+  "footer": {
+    "copyright": "© 2025 Flowmeup. All rights reserved."
+  }
+}
