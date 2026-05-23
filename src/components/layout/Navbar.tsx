@@ -1,5 +1,6 @@
 import { Container } from '@/components/ui/Container'
 import { Button } from '@/components/ui/Button'
+import { LanguageSwitcher } from '@/components/layout/LanguageSwitcher'
 import type { Locale } from '@/types/i18n'
 
 interface NavbarProps {
@@ -17,21 +18,8 @@ export function Navbar({ dict, lang }: NavbarProps) {
         <span className="text-white font-bold text-xl tracking-tight">Flowmeup</span>
 
         <div className="flex items-center gap-6">
-          {/* Language switcher placeholder — full switcher in Wave 3 */}
-          <div className="hidden sm:flex items-center gap-2 text-sm text-navy-300">
-            <a
-              href="/it"
-              className={`transition-colors hover:text-white ${lang === 'it' ? 'font-bold text-white underline' : ''}`}
-            >
-              IT
-            </a>
-            <span className="text-navy-400">|</span>
-            <a
-              href="/en"
-              className={`transition-colors hover:text-white ${lang === 'en' ? 'font-bold text-white underline' : ''}`}
-            >
-              EN
-            </a>
+          <div className="hidden sm:block">
+            <LanguageSwitcher currentLang={lang} />
           </div>
 
           <Button variant="secondary-on-dark" href="#contact">

@@ -7,6 +7,9 @@ import { Problem } from '@/components/sections/Problem'
 import { Solution } from '@/components/sections/Solution'
 import { AgentCards } from '@/components/sections/AgentCards'
 import { Differentiator } from '@/components/sections/Differentiator'
+import { Delivery } from '@/components/sections/Delivery'
+import { Pricing } from '@/components/sections/Pricing'
+import { ContactForm } from '@/components/sections/ContactForm'
 
 export default async function HomePage({
   params,
@@ -23,8 +26,11 @@ export default async function HomePage({
         <Hero dict={dict} />
         <Problem dict={dict} />
         <Solution dict={dict} />
-        <AgentCards />
-        <Differentiator />
+        <AgentCards lang={lang} dict={dict} />
+        <Differentiator dict={dict} />
+        <Delivery dict={dict} />
+        <Pricing dict={dict} lang={lang} />
+        <ContactForm dict={dict} lang={lang} />
       </main>
       <Footer dict={dict} />
     </>

@@ -1,8 +1,13 @@
-import { AgentCard, type AgentData } from '@/components/ui/AgentCard'
+'use client'
 
-// Agent data hardcoded from COPY-BRIEF-IT.md Section 4.
-// Wave 3 will wire locale-aware dict props.
-const agents: AgentData[] = [
+import { useRef } from 'react'
+import { motion, useInView, type Variants } from 'framer-motion'
+import { AgentCard, type AgentData } from '@/components/ui/AgentCard'
+import { Container } from '@/components/ui/Container'
+import { useScrollReveal } from '@/hooks/useScrollReveal'
+import type { Locale } from '@/types/i18n'
+
+const agentsIT: AgentData[] = [
   {
     name: 'Voice Lead',
     tagline: 'registra un lead in 90 secondi',
@@ -53,30 +58,111 @@ const agents: AgentData[] = [
   },
 ]
 
-export function AgentCards() {
+const agentsEN: AgentData[] = [
+  {
+    name: 'Voice Lead',
+    tagline: 'log a lead in 90 seconds',
+    badge: 'live',
+    beforeValue: '~30 minutes',
+    afterValue: '90 seconds',
+    beforeLabel: 'Before',
+    afterLabel: 'After',
+    trigger: 'Send a voice note. The lead is in your system.',
+    description:
+      'Your rep says "Met Bianchi Construction today, interested in product X, follow up in two weeks." The agent transcribes, extracts the fields, updates the record. Confirmation in 30 seconds.',
+  },
+  {
+    name: 'Lead Scout',
+    tagline: 'find new prospects in 30 minutes',
+    badge: 'live',
+    beforeValue: '~1 day',
+    afterValue: '30 minutes',
+    beforeLabel: 'Before',
+    afterLabel: 'After',
+    trigger: 'Describe what you\'re looking for. Get the list.',
+    description:
+      '"Construction companies in Northern Italy, 20-100 employees, commercial fit-outs." The agent returns a qualified prospect list with company name, sector, location, and available contact info. Already filtered to exclude companies you have.',
+  },
+  {
+    name: 'Pre-Call Brief',
+    tagline: 'get ready in 30 seconds',
+    badge: 'coming-soon',
+    beforeValue: '15-20 minutes',
+    afterValue: '30 seconds',
+    beforeLabel: 'Before',
+    afterLabel: 'After',
+    trigger: 'Ask what you know about a client. Get the brief.',
+    description:
+      '"What do we know about Rossi?" The agent returns: last contact, open offers, who\'s following them, recent notes. No email archaeology.',
+  },
+  {
+    name: 'Follow-Up Radar',
+    tagline: 'no lead goes cold silently',
+    badge: 'coming-soon',
+    beforeValue: 'Deals die silently',
+    afterValue: 'Morning alert',
+    beforeLabel: 'Before',
+    afterLabel: 'After',
+    trigger: 'Automatic every morning. Or on demand.',
+    description:
+      'The agent runs daily and sends you the list of leads you haven\'t contacted in more than 7 days. Nothing extra to do: it reads data you already have.',
+  },
+]
+
+const containerVariants: Variants = {
+  hidden: {},
+  visible: { transition: { staggerChildren: 0.08 } },
+}
+
+const cardVariants: Variants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.4, ease: [0, 0, 0.58, 1] } },
+}
+
+interface AgentCardsProps {
+  lang?: Locale
+  dict?: Record<string, unknown>
+}
+
+export function AgentCards({ lang = 'it', dict }: AgentCardsProps) {
+  const headingRef = useScrollReveal<HTMLHeadingElement>()
+  const gridRef = useRef<HTMLDivElement>(null)
+  const isInView = useInView(gridRef, { once: true, amount: 0.15 })
+
+  const agents = lang === 'en' ? agentsEN : agentsIT
+  const agentsDict = dict?.agents as Record<string, string> | undefined
+  const headline = agentsDict?.headline ?? (lang === 'en' ? 'The Flowmeup agents' : 'Gli agenti Flowmeup')
+  const subheadline = agentsDict?.subheadline ?? (lang === 'en'
+    ? 'Live now or coming soon. Each one solves a specific sales process.'
+    : 'Attivi subito o in arrivo. Ognuno risolve un processo commerciale specifico.')
+
   return (
     <section className="bg-slate-50 py-12 md:py-16 lg:py-20">
-      <div className="max-w-[1200px] mx-auto px-4">
-        {/* Section header */}
+      <Container>
         <div className="text-center mb-8">
-          <h2 className="text-3xl md:text-4xl font-bold text-slate-800 leading-[1.2] reveal">
-            Gli agenti Flowmeup
+          <h2
+            ref={headingRef}
+            className="reveal text-3xl md:text-4xl font-bold text-slate-800 leading-[1.2]"
+          >
+            {headline}
           </h2>
-          <p className="text-base text-slate-600 mt-3">
-            Attivi subito o in arrivo. Ognuno risolve un processo commerciale
-            specifico.
-          </p>
+          <p className="text-base text-slate-600 mt-3">{subheadline}</p>
         </div>
 
-        {/* 2x2 grid on tablet+, single column on mobile */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <motion.div
+          ref={gridRef}
+          className="grid grid-cols-1 md:grid-cols-2 gap-6"
+          variants={containerVariants}
+          initial="hidden"
+          animate={isInView ? 'visible' : 'hidden'}
+        >
           {agents.map((agent) => (
-            <div key={agent.name} className="reveal">
+            <motion.div key={agent.name} variants={cardVariants}>
               <AgentCard {...agent} />
-            </div>
+            </motion.div>
           ))}
-        </div>
-      </div>
+        </motion.div>
+      </Container>
     </section>
   )
 }
