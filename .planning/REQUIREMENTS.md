@@ -21,8 +21,8 @@
 - [x] **LAND-01**: Hero section — headline + subheadline + CTA primario (IT + EN)
 - [x] **LAND-02**: Problem section — "Ogni giorno i tuoi commerciali perdono ore..." (IT + EN)
 - [x] **LAND-03**: Solution section — "Agenti AI configurati sul tuo processo..." (IT + EN)
-- [ ] **LAND-04**: Agent cards section — 4 card con nome + before/after + badge live/coming soon (IT + EN)
-- [ ] **LAND-05**: Differentiator section — memoria condivisa AREX, senza nominarla (IT + EN)
+- [x] **LAND-04**: Agent cards section — 4 card con nome + before/after + badge live/coming soon (IT + EN)
+- [x] **LAND-05**: Differentiator section — memoria condivisa AREX, senza nominarla (IT + EN)
 - [ ] **LAND-06**: Delivery section — "Raccontaci il tuo processo. Sei operativo entro una settimana." (IT + EN)
 - [ ] **LAND-07**: Pricing section — tabella per agent con prezzi mensili chiari (IT + EN)
 - [ ] **LAND-08**: CTA / Contact section — form 5 campi + link calendario (IT + EN)
@@ -143,8 +143,8 @@ Skill rilevanti per questo progetto (da `~/.claude/skills/`) — analisi complet
 | LAND-01 | Phase 2 | Complete |
 | LAND-02 | Phase 2 | Complete |
 | LAND-03 | Phase 2 | Complete |
-| LAND-04 | Phase 2 | Pending |
-| LAND-05 | Phase 2 | Pending |
+| LAND-04 | Phase 2 | Complete |
+| LAND-05 | Phase 2 | Complete |
 | LAND-06 | Phase 2 | Pending |
 | LAND-07 | Phase 2 | Pending |
 | LAND-08 | Phase 2 | Pending |

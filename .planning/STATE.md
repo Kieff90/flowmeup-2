@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: completed
-stopped_at: Completed 02-02-PLAN.md — Shared UI primitives + Hero/Problem/Solution sections
-last_updated: "2026-05-23T13:02:07.815Z"
+stopped_at: Completed 02-03-PLAN.md — AgentCards section + Differentiator section
+last_updated: "2026-05-23T13:02:36.755Z"
 last_activity: 2026-05-23 — Next.js 15 scaffold complete (TECH-01). /it and /en routes live. Tailwind v4 tokens configured.
 progress:
   total_phases: 3
   completed_phases: 1
   total_plans: 9
-  completed_plans: 5
+  completed_plans: 6
   percent: 44
 ---
 
@@ -56,6 +56,7 @@ Progress: [████░░░░░░] 44% (4/9 plans complete)
 | Phase 01-spec-and-concept P02 | 30 min | 3 tasks | 1 file |
 | Phase 02-build-landing-page P01 | 18 min | 3 tasks | 22 files |
 | Phase 02-build-landing-page P02 | 20min | 2 tasks | 11 files |
+| Phase 02-build-landing-page P03 | 12 | 2 tasks | 4 files |
 
 ## Accumulated Context
 
@@ -78,6 +79,9 @@ Recent decisions affecting current work:
 - [Phase 02-build-landing-page]: H1 not animated — SPEC-02 honored, value proposition immediately visible
 - [Phase 02-build-landing-page]: Button component href-aware: renders <a> when href provided, <button> otherwise
 - [Phase 02-build-landing-page]: .reveal class applied statically on H2 elements as placeholder for Wave 3 Intersection Observer wiring
+- [Phase 02-build-landing-page]: Badge inline in AgentCard.tsx to avoid 02-02 parallel-plan dependency on Badge.tsx at build time
+- [Phase 02-build-landing-page]: Hardcoded IT agent data in AgentCards.tsx — dictionaries owned by 02-02; Wave 3 adds locale prop
+- [Phase 02-build-landing-page]: No decorative icons in agent cards — COPY-BRIEF-IT explicit: numbers are the visual content
 
 ### Pending Todos
 
@@ -90,6 +94,6 @@ None.
 
 ## Session Continuity
 
-Last session: 2026-05-23T13:02:07.811Z
-Stopped at: Completed 02-02-PLAN.md — Shared UI primitives + Hero/Problem/Solution sections
+Last session: 2026-05-23T13:02:36.744Z
+Stopped at: Completed 02-03-PLAN.md — AgentCards section + Differentiator section
 Resume file: None
