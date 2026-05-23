@@ -2,6 +2,35 @@
 
 > Required by the `impeccable shape` skill. Single source of truth for product context used during Phase 2 build.
 
+## Register
+
+**`register: brand`** — landing page is the product. Design IS the marketing surface. Brand register permissions apply: ambitious motion, committed color strategy, typographic risk, single-purpose viewports.
+
+## Anti-References (do NOT design like these)
+
+The current v1 fell into them. The rebuild must escape them.
+
+- **Navy `#0F2349` + amber `#F59E0B` SaaS palette** — second-order reflex trap ("fintech that's not navy-and-gold → navy-and-gold"). Forbidden in v2.
+- **Inter as default body+heading** — in impeccable's reflex-reject font list. Pick something that fits a 45yo Italian construction company owner, not a YC startup landing.
+- **Stripe-cream / Linear-glass minimalism** — too tech-saturated for the SMB owner audience.
+- **v0.dev / Lovable / Bolt default output** — the "AI made that" giveaway. Centered hero + icon cards + gradient text + faint shadows + Inter.
+- **Editorial-magazine display-serif + italic + drop caps** — the lane one tier deeper. Recoleta, Fraunces, Cormorant on body copy. Wrong register: we're not Condé Nast.
+- **Identical card grids** — AgentCards 4 cards same size icon-heading-text. Reads as template.
+- **Hero-metric template** — big number + small label + supporting stats + gradient accent. SaaS cliché banned in `brand.md`.
+- **All-caps "COMING SOON" tracking-wide labels as section grammar** — repeated kicker = AI scaffolding (`brand.md` brand bans).
+- **Zero imagery** — for a field-sales product, hero photo of a real salesperson in a real environment (truck cab, construction site, warehouse) is not optional. Solid `<div>` placeholders are forbidden.
+
+## Aesthetic Lane Target
+
+**Committed color strategy** (per user direction): one saturated dominant color carries 30–60% of the surface. Reference moods to research, not copy:
+
+- "Italian industrial signage" — yellow/black, mechanical, working-class confidence
+- "1970s-era enterprise software manual" — cream + ink, technical without being sterile
+- "Tactile blue-collar tools brand" (Caterpillar, Bosch Professional, Hilti) — saturated single hue + heavy weight
+- "Italian editorial poster" (Massimo Vignelli, Bruno Munari) — bold, opinionated, geometric
+
+The final palette must be **nameable as a reference** ("Hilti orange-on-graphite", "Vignelli yellow-and-black", etc.) — never "tasteful blue with accent".
+
 ## Core Value Proposition
 
 A field sales rep logs a lead in 90 seconds from their phone while driving — without opening any tool, without changing any habit. No CRM friction. No lost leads.
