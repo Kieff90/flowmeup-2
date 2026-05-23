@@ -3,15 +3,15 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: planning
-stopped_at: Completed 01-spec-and-concept-02-PLAN.md
-last_updated: "2026-05-23T11:27:38Z"
-last_activity: 2026-05-23 — Roadmap created, project initialized
+stopped_at: Completed 01-spec-and-concept-03-PLAN.md
+last_updated: "2026-05-23T11:44:01Z"
+last_activity: 2026-05-23 — Copy briefs IT + EN approved (SPEC-04, SPEC-05). Phase 1 complete.
 progress:
   total_phases: 3
-  completed_phases: 0
+  completed_phases: 1
   total_plans: 3
-  completed_plans: 2
-  percent: 67
+  completed_plans: 3
+  percent: 100
 ---
 
 # Project State
@@ -25,12 +25,12 @@ See: .planning/PROJECT.md (updated 2026-05-23)
 
 ## Current Position
 
-Phase: 1 of 3 (Spec & Concept)
-Plan: 2 of 3 in current phase (01-02 complete)
-Status: In progress
-Last activity: 2026-05-23 — Design system generated and approved (SPEC-02 complete)
+Phase: 1 of 3 (Spec & Concept) — COMPLETE
+Plan: 3 of 3 in current phase (all complete)
+Status: Phase 1 complete — ready for Phase 2
+Last activity: 2026-05-23 — Copy briefs IT + EN approved (SPEC-04, SPEC-05). Phase 1 complete.
 
-Progress: [██████░░░░] 67%
+Progress: [██████████] 100% (Phase 1)
 
 ## Performance Metrics
 
@@ -71,6 +71,8 @@ Recent decisions affecting current work:
 - [Phase 01-spec-and-concept]: SPEC-02: Single font (Inter) — humanist sans-serif, readable on mobile, free via Google Fonts
 - [Phase 01-spec-and-concept]: SPEC-02: Light mode only for v1 — field sales users view on iPhone in daylight; semantic tokens preserve dark mode optionality
 - [Phase 01-spec-and-concept]: SPEC-02: Hero headline NOT animated on load — value proposition must be immediately visible
+- [Phase 01-spec-and-concept]: SPEC-04: Copy brief IT approved — all 8 sections, tool-agnostic friction framing, per-section animation specs embedded
+- [Phase 01-spec-and-concept]: SPEC-05: Copy brief EN approved — adapted for EU English market, not literal translation, same animation specs
 
 ### Pending Todos
 
@@ -83,6 +85,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-05-23T11:27:38Z
-Stopped at: Completed 01-spec-and-concept-02-PLAN.md
+Last session: 2026-05-23T11:44:01Z
+Stopped at: Completed 01-spec-and-concept-03-PLAN.md — Phase 1 complete
 Resume file: None

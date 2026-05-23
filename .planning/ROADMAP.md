@@ -12,7 +12,7 @@ Three phases take the project from zero to live. Phase 1 locks down every decisi
 
 Decimal phases appear between their surrounding integers in numeric order.
 
-- [ ] **Phase 1: Spec & Concept** - Lock all decisions needed to start building: agents shown, design direction, copy brief IT/EN, tech stack
+- [x] **Phase 1: Spec & Concept** - Lock all decisions needed to start building: agents shown, design direction, copy brief IT/EN, tech stack
 - [ ] **Phase 2: Build Landing Page** - Build complete landing page — all 8 sections, design system, responsive, animations, contact form
 - [ ] **Phase 3: SEO & GEO** - Ottimizza per search tradizionale e AI search engines; deploy gestito dall'utente
 
@@ -32,9 +32,9 @@ Decimal phases appear between their surrounding integers in numeric order.
 **Plans**: 3 plans
 
 Plans:
-- [ ] 01-01-PLAN.md — Lock decisions (SPEC-01: 4 agents, SPEC-06: Next.js stack) + finalize skill catalog (SPEC-03)
+- [x] 01-01-PLAN.md — Lock decisions (SPEC-01: 4 agents, SPEC-06: Next.js stack) + finalize skill catalog (SPEC-03)
 - [x] 01-02-PLAN.md — Generate design system with brainstorming + ui-ux-pro-max (SPEC-02)
-- [ ] 01-03-PLAN.md — Write and approve copy briefs IT and EN for all 8 sections (SPEC-04, SPEC-05)
+- [x] 01-03-PLAN.md — Write and approve copy briefs IT and EN for all 8 sections (SPEC-04, SPEC-05)
 
 ### Phase 2: Build Landing Page
 **Goal**: A fully built, responsive landing page with all sections, design system applied, animations, and a working contact form
@@ -67,6 +67,6 @@ Phases execute in numeric order: 1 → 2 → 3
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Spec & Concept | 2/3 | In Progress|  |
+| 1. Spec & Concept | 3/3 | Complete | 2026-05-23 |
 | 2. Build Landing Page | 0/TBD | Not started | - |
 | 3. SEO & GEO | 0/TBD | Not started | - |

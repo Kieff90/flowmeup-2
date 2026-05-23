@@ -12,8 +12,8 @@
 - [x] **SPEC-01**: Decisione approvata: mostrare 2 agenti live o tutti 4 (live + coming soon)
 - [x] **SPEC-02**: Design direction definita: stile visivo, palette, tipografia per B2B Italian SMB
 - [x] **SPEC-03**: Skill catalog scritto: lista delle skill disponibili per UI/UX/animazione con ordine di utilizzo
-- [ ] **SPEC-04**: Copy brief IT approvato per tutte le sezioni della landing
-- [ ] **SPEC-05**: Copy brief EN approvato per tutte le sezioni della landing
+- [x] **SPEC-04**: Copy brief IT approvato per tutte le sezioni della landing
+- [x] **SPEC-05**: Copy brief EN approvato per tutte le sezioni della landing
 - [x] **SPEC-06**: Stack tecnico scelto (Next.js/Tailwind vs HTML/Tailwind vs altro)
 
 ### Landing Structure
@@ -137,8 +137,8 @@ Skill rilevanti per questo progetto (da `~/.claude/skills/`) — analisi complet
 | SPEC-01 | Phase 1 | Complete |
 | SPEC-02 | Phase 1 | Complete |
 | SPEC-03 | Phase 1 | Complete |
-| SPEC-04 | Phase 1 | Pending |
-| SPEC-05 | Phase 1 | Pending |
+| SPEC-04 | Phase 1 | Complete |
+| SPEC-05 | Phase 1 | Complete |
 | SPEC-06 | Phase 1 | Complete |
 | LAND-01 | Phase 2 | Pending |
 | LAND-02 | Phase 2 | Pending |
