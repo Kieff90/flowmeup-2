@@ -1,5 +1,6 @@
-// Root page — layout.tsx redirects to /it (default locale)
-// This file exists to satisfy Next.js App Router conventions
+import { redirect } from 'next/navigation'
+
+// Root page — redirects to /it (default locale)
 export default function RootPage() {
-  return null
+  redirect('/it')
 }
