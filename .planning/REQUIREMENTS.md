@@ -18,9 +18,9 @@
 
 ### Landing Structure
 
-- [ ] **LAND-01**: Hero section — headline + subheadline + CTA primario (IT + EN)
-- [ ] **LAND-02**: Problem section — "Ogni giorno i tuoi commerciali perdono ore..." (IT + EN)
-- [ ] **LAND-03**: Solution section — "Agenti AI configurati sul tuo processo..." (IT + EN)
+- [x] **LAND-01**: Hero section — headline + subheadline + CTA primario (IT + EN)
+- [x] **LAND-02**: Problem section — "Ogni giorno i tuoi commerciali perdono ore..." (IT + EN)
+- [x] **LAND-03**: Solution section — "Agenti AI configurati sul tuo processo..." (IT + EN)
 - [ ] **LAND-04**: Agent cards section — 4 card con nome + before/after + badge live/coming soon (IT + EN)
 - [ ] **LAND-05**: Differentiator section — memoria condivisa AREX, senza nominarla (IT + EN)
 - [ ] **LAND-06**: Delivery section — "Raccontaci il tuo processo. Sei operativo entro una settimana." (IT + EN)
@@ -29,7 +29,7 @@
 
 ### Design & UX
 
-- [ ] **DSGN-01**: Design system applicato: colori, tipografia, spaziatura, componenti base
+- [x] **DSGN-01**: Design system applicato: colori, tipografia, spaziatura, componenti base
 - [ ] **DSGN-02**: Responsive implementata: 375px (mobile), 768px (tablet), 1024px, 1440px
 - [ ] **DSGN-03**: Animazioni e micro-interazioni: hero entrance, scroll reveals, hover states sui card agenti
 - [ ] **DSGN-04**: Language switcher IT/EN funzionante
@@ -140,15 +140,15 @@ Skill rilevanti per questo progetto (da `~/.claude/skills/`) — analisi complet
 | SPEC-04 | Phase 1 | Complete |
 | SPEC-05 | Phase 1 | Complete |
 | SPEC-06 | Phase 1 | Complete |
-| LAND-01 | Phase 2 | Pending |
-| LAND-02 | Phase 2 | Pending |
-| LAND-03 | Phase 2 | Pending |
+| LAND-01 | Phase 2 | Complete |
+| LAND-02 | Phase 2 | Complete |
+| LAND-03 | Phase 2 | Complete |
 | LAND-04 | Phase 2 | Pending |
 | LAND-05 | Phase 2 | Pending |
 | LAND-06 | Phase 2 | Pending |
 | LAND-07 | Phase 2 | Pending |
 | LAND-08 | Phase 2 | Pending |
-| DSGN-01 | Phase 2 | Pending |
+| DSGN-01 | Phase 2 | Complete |
 | DSGN-02 | Phase 2 | Pending |
 | DSGN-03 | Phase 2 | Pending |
 | DSGN-04 | Phase 2 | Pending |

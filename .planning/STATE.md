@@ -2,15 +2,15 @@
 gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
-status: active
-stopped_at: "Completed 02-01-PLAN.md — Next.js scaffold + Tailwind tokens + i18n routing"
-last_updated: "2026-05-23T13:07:00Z"
-last_activity: "2026-05-23 — Phase 2 Plan 01 complete: Next.js 15 scaffold with Tailwind v4 tokens, /[lang] i18n routing, PRODUCT.md, DESIGN.md"
+status: completed
+stopped_at: Completed 02-02-PLAN.md — Shared UI primitives + Hero/Problem/Solution sections
+last_updated: "2026-05-23T13:02:07.815Z"
+last_activity: 2026-05-23 — Next.js 15 scaffold complete (TECH-01). /it and /en routes live. Tailwind v4 tokens configured.
 progress:
   total_phases: 3
   completed_phases: 1
   total_plans: 9
-  completed_plans: 4
+  completed_plans: 5
   percent: 44
 ---
 
@@ -55,6 +55,7 @@ Progress: [████░░░░░░] 44% (4/9 plans complete)
 | Phase 01-spec-and-concept P01 | 12 min | 2 tasks | 2 files |
 | Phase 01-spec-and-concept P02 | 30 min | 3 tasks | 1 file |
 | Phase 02-build-landing-page P01 | 18 min | 3 tasks | 22 files |
+| Phase 02-build-landing-page P02 | 20min | 2 tasks | 11 files |
 
 ## Accumulated Context
 
@@ -74,6 +75,9 @@ Recent decisions affecting current work:
 - [Phase 02-build-landing-page]: TECH-01: Tailwind v4 config via tailwind.config.ts + @config directive — matches MASTER.md §9 verbatim, enables IDE token autocomplete
 - [Phase 02-build-landing-page]: TECH-01: type:module in package.json eliminates ESM warning from tailwind.config.ts
 - [Phase 02-build-landing-page]: TECH-01: Root layout.tsx redirects to /it; page.tsx returns null stub
+- [Phase 02-build-landing-page]: H1 not animated — SPEC-02 honored, value proposition immediately visible
+- [Phase 02-build-landing-page]: Button component href-aware: renders <a> when href provided, <button> otherwise
+- [Phase 02-build-landing-page]: .reveal class applied statically on H2 elements as placeholder for Wave 3 Intersection Observer wiring
 
 ### Pending Todos
 
@@ -86,6 +90,6 @@ None.
 
 ## Session Continuity
 
-Last session: 2026-05-23T13:07:00Z
-Stopped at: Completed 02-01-PLAN.md — Next.js scaffold + Tailwind tokens + i18n routing
+Last session: 2026-05-23T13:02:07.811Z
+Stopped at: Completed 02-02-PLAN.md — Shared UI primitives + Hero/Problem/Solution sections
 Resume file: None
