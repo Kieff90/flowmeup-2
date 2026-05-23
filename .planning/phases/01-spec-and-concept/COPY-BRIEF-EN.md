@@ -14,7 +14,7 @@
 Your sales rep logs a lead in 90 seconds. From their phone. While driving.
 
 **Subheadline / body direction:**
-For business owners with field sales teams: leads don't go cold because your reps aren't working. They go cold because no one opens a CRM from the car between appointments. Flowmeup fixes that. Nothing to install. Nothing to change.
+For business owners with field sales teams: leads don't go cold because your reps aren't working. They go cold because no one opens their records from the car between appointments. Flowmeup fixes that. Nothing to install. Nothing to change.
 
 **CTA:**
 Button text: "Let's talk about your process"
@@ -28,16 +28,17 @@ Link: anchor to Section 8 (form + calendar)
 - CTA must be in the fold: visible without scrolling on iPhone 12+.
 - No animation on headline at load (approved SPEC-02 decision).
 - Background: deep navy (#0F2349). Text: white. CTA: amber (#F59E0B).
+- **Animation (MASTER.md §6):** CTA button fade-in with 200ms delay after paint — `opacity: 0→1, translateY(4px)→0`. Always include `@media (prefers-reduced-motion: reduce)` override.
 
 ---
 
 ## Section 2: Problem
 
 **Headline:**
-Every day your salespeople lose hours updating spreadsheets and CRMs. On a good day.
+Every day your salespeople lose hours updating spreadsheets and records. On a good day.
 
 **Subheadline / body direction:**
-The meeting ends. The rep gets in the car. The CRM is on the laptop back at the office. "I'll update it tonight" — but tonight it doesn't happen. The lead sits there. You find out two weeks later when someone asks about the account and nobody has notes.
+The meeting ends. The rep gets in the car. Whatever system they use to keep records — it's back at the desk. "I'll update it tonight" — but tonight it doesn't happen. The lead sits there. You find out two weeks later when someone asks about the account and nobody has notes.
 
 This isn't a discipline problem. It's a friction problem: too many steps between when something happens in the field and when it gets recorded anywhere.
 
@@ -50,6 +51,7 @@ This isn't a discipline problem. It's a friction problem: too many steps between
 - Narrative text, no bullet points.
 - 2 paragraphs, readable font size (minimum 17px body).
 - The last sentence before the solution should create the tension that pulls to Section 3.
+- **Animation (MASTER.md §6):** Scroll reveal on the section heading — `.reveal` class, 400ms ease-out, trigger Intersection Observer at 15% visibility. The two paragraphs enter as a single block (no stagger needed — it's continuous narrative). Always include `@media (prefers-reduced-motion: reduce)` override.
 
 ---
 
@@ -70,6 +72,7 @@ Your rep sends a voice note on WhatsApp. The lead is saved. No app to download, 
 - Tone: reassuring, concrete. Not technical.
 - 2-3 small icons (WhatsApp, Excel, calendar) can make "where you already work" visual, but only if they don't slow load time.
 - Clean transition into Section 4 (agent cards).
+- **Animation (MASTER.md §6):** Scroll reveal on heading, 400ms ease-out, trigger IO at 15%. If icons/feature blocks are used: stagger 80ms each as they enter viewport. Always include `@media (prefers-reduced-motion: reduce)` override.
 
 ---
 
@@ -141,6 +144,7 @@ Description: The agent runs daily and sends you the list of leads you haven't co
 - Before/after numbers must be visually prominent: large body size, bold weight, amber color for the "after" value.
 - LIVE / COMING SOON badge goes in the top right corner of each card.
 - No decorative icons in the cards: the numbers are the visual content.
+- **Animation (MASTER.md §6):** (a) Scroll reveal on section heading, 400ms ease-out, trigger IO at 15%. (b) 4 cards stagger 80ms each as they enter viewport. (c) Card hover: `translateY(-4px)` + shadow upgrade (`0 10px 30px rgba(15,35,73,0.12)`) + border-color `#CBD5E1`, 200ms ease. (d) LIVE badge pulse: white dot only — `animation: live-pulse 2s ease-in-out infinite` (dot only, not the entire badge). Always include `@media (prefers-reduced-motion: reduce)` override.
 
 ---
 
@@ -161,6 +165,7 @@ All agents work from the same memory. When a rep logs Bianchi Construction throu
 - Tone: concrete, not technical. The "rep logs, manager sees" example is the core message.
 - A simple minimal diagram showing the 4 agents connected to a shared center works if it stays clean. Otherwise text only.
 - Slightly different background (muted navy or dark grey) to create visual breathing room.
+- **Animation (MASTER.md §6):** Scroll reveal on headline, 400ms ease-out, trigger IO at 15%. If diagram is implemented: fade-in with 300ms delay after heading reveals. Always include `@media (prefers-reduced-motion: reduce)` override.
 
 ---
 
@@ -185,6 +190,7 @@ Changes you need afterward? Send a message. Implemented within 48 hours.
 - Suggested steps: 1. 30-min call, 2. Configuration, 3. Team onboarding, 4. Live.
 - Emphasize "one week" — it's the differentiator vs. typical IT implementations.
 - Tone: reassuring. The owner needs to know they don't touch anything themselves.
+- **Animation (MASTER.md §6):** Scroll reveal on heading, 400ms ease-out, trigger IO at 15%. Numbered steps stagger 80ms each as they enter viewport. Always include `@media (prefers-reduced-motion: reduce)` override.
 
 ---
 
@@ -228,6 +234,7 @@ Link: anchor to Section 8
 - Conversational tone: the button below the table leads to a call, not a checkout.
 - COMING SOON agents can be shown in muted grey with the badge, or display "Price to be confirmed" if the decision is made not to show pricing for agents not yet live. This must be confirmed before LAND-07.
 - The construction company example works well as a visual callout box.
+- **Animation (MASTER.md §6):** Scroll reveal on heading, 400ms ease-out, trigger IO at 15%. Table rows fade in sequentially with 80ms stagger per row. Always include `@media (prefers-reduced-motion: reduce)` override.
 
 ---
 
@@ -263,3 +270,4 @@ Link: Calendly or equivalent
 - Navy background for visual closure consistent with the hero.
 - This section is the main conversion point. No distractions: no complex footer, no external links near the form.
 - After submission: inline confirmation message (no redirect), text like "Got it. We'll write to you within 24 hours to confirm a time."
+- **Animation (MASTER.md §6):** Form input focus state — amber border `#F59E0B` + `box-shadow: 0 0 0 3px rgba(245,158,11,0.15)`, 200ms transition. Submit button hover: `#D97706` (amber-600) + `translateY(-1px)`, 150ms. Always include `@media (prefers-reduced-motion: reduce)` override.

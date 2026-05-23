@@ -27,6 +27,7 @@ Link: ancora alla Section 8 (form + calendario)
 - Il CTA va nel fold: visibile senza scroll su iPhone 12+.
 - Nessuna animazione sulla headline al caricamento (decisione SPEC-02 approvata).
 - Background: navy profondo (#0F2349). Testo: bianco. CTA: amber (#F59E0B).
+- **Animazione (MASTER.md §6):** CTA button fade-in con delay 200ms dopo il paint — `opacity: 0→1, translateY(4px)→0`. Sempre includere override `@media (prefers-reduced-motion: reduce)`.
 
 ---
 
@@ -36,7 +37,7 @@ Link: ancora alla Section 8 (form + calendario)
 Ogni giorno i tuoi commerciali perdono ore ad aggiornare fogli e gestionali.
 
 **Subheadline / body direction:**
-Finisce un appuntamento. Il commerciale e' in macchina. Il CRM e' sul PC in ufficio. "Lo aggiorno stasera" — ma stasera non succede. Il lead raffredda. Il titolare non sa nulla finche' non chiede. E nel frattempo, il competitor ha gia' richiamato.
+Finisce un appuntamento. Il commerciale e' in macchina. Qualunque cosa usi per tenere i dati — foglio, gestionale, agenda — e' sul computer in ufficio. "Lo aggiorno stasera" — ma stasera non succede. Il lead raffredda. Il titolare non sa nulla finche' non chiede. E nel frattempo, il competitor ha gia' richiamato.
 
 Questo non e' un problema di volonta'. E' un problema di frizione: troppi passaggi tra il momento in cui succede qualcosa e il momento in cui viene registrato.
 
@@ -49,6 +50,7 @@ Questo non e' un problema di volonta'. E' un problema di frizione: troppi passag
 - Testo narrativo, nessuna lista puntata.
 - 2 paragrafi, font size leggibile (almeno 17px corpo).
 - L'ultima frase prima della soluzione deve creare la tensione che porta alla Section 3.
+- **Animazione (MASTER.md §6):** Scroll reveal sull'heading della sezione — classe `.reveal`, 400ms ease-out, trigger Intersection Observer al 15% di visibilita'. I due paragrafi entrano come blocco unico (nessuno stagger — e' narrativa continua). Sempre includere override `@media (prefers-reduced-motion: reduce)`.
 
 ---
 
@@ -69,6 +71,7 @@ Il commerciale manda un messaggio vocale su WhatsApp. Il lead e' salvato. Nessun
 - Tono: rassicurante, concreto. Non tecnico.
 - Puoi aggiungere 2-3 icone piccole (WhatsApp, Excel, calendario) per rendere visivo il concetto "dove lavori gia' tu", ma solo se non rallentano il caricamento.
 - Transizione fluida verso Section 4 (le card degli agenti).
+- **Animazione (MASTER.md §6):** Scroll reveal sull'heading, 400ms ease-out, trigger IO al 15%. Se vengono usate le icone/blocchi feature: stagger di 80ms ciascuno mentre entrano nel viewport. Sempre includere override `@media (prefers-reduced-motion: reduce)`.
 
 ---
 
@@ -140,6 +143,7 @@ Descrizione: L'agente gira ogni giorno e ti manda la lista dei lead che non sent
 - I numeri before/after devono essere visivamente prominenti: corpo grande, peso bold, colore amber per il valore "dopo".
 - Il badge LIVE / COMING SOON va nell'angolo superiore destro di ogni card.
 - Non usare icone decorative nelle card: i numeri sono il contenuto visivo.
+- **Animazione (MASTER.md §6):** (a) Scroll reveal sull'heading della sezione, 400ms ease-out, trigger IO al 15%. (b) Le 4 card entrano con stagger di 80ms ciascuna quando entrano nel viewport. (c) Hover card: `translateY(-4px)` + shadow upgrade (`0 10px 30px rgba(15,35,73,0.12)`) + border-color `#CBD5E1`, transizione 200ms ease. (d) Badge LIVE: pulse sul solo pallino bianco — `animation: live-pulse 2s ease-in-out infinite` (non sull'intero badge). Sempre includere override `@media (prefers-reduced-motion: reduce)`.
 
 ---
 
@@ -160,6 +164,7 @@ Tutti gli agenti lavorano sulla stessa memoria. Quando Marco registra Bianchi Co
 - Tono: concreto, non tecnico. L'esempio "Marco registra, il titolare vede" e' il cuore.
 - Puoi usare un visual semplice (diagramma minimal) che mostra i 4 agenti connessi a un centro condiviso, ma solo se resta pulito. Altrimenti solo testo.
 - Sezione a sfondo leggermente diverso (navy opaco o grigio scuro) per creare respiro visivo.
+- **Animazione (MASTER.md §6):** Scroll reveal sull'headline, 400ms ease-out, trigger IO al 15%. Se viene implementato il diagramma: fade-in con delay 300ms dopo che l'heading e' apparso. Sempre includere override `@media (prefers-reduced-motion: reduce)`.
 
 ---
 
@@ -184,6 +189,7 @@ Le modifiche che servono dopo? Si chiedono via messaggio. Vengono implementate e
 - Step suggeriti: 1. Chiamata 30 min, 2. Configurazione, 3. Onboarding team, 4. Operativo.
 - Enfatizza "una settimana" — e' il differenziatore rispetto all'implementazione classica IT.
 - Tono: rassicurante. Il titolare vuole sapere che non tocca niente lui.
+- **Animazione (MASTER.md §6):** Scroll reveal sull'heading, 400ms ease-out, trigger IO al 15%. Gli step numerati entrano con stagger di 80ms ciascuno. Sempre includere override `@media (prefers-reduced-motion: reduce)`.
 
 ---
 
@@ -227,6 +233,7 @@ Link: ancora alla Section 8
 - Tono conversazionale: il bottone sotto la tabella porta a una chiamata, non a un checkout.
 - I prezzi COMING SOON possono essere mostrati in grigio/muted con il badge, oppure nascosti con solo "Prezzo in arrivo" se si decide di non esporre pricing su agenti non ancora live. Questa scelta va confermata prima di LAND-07.
 - L'esempio concreto dell'azienda edile puo' essere un callout box visivo.
+- **Animazione (MASTER.md §6):** Scroll reveal sull'heading, 400ms ease-out, trigger IO al 15%. Le righe della tabella entrano in sequenza con stagger di 80ms per riga. Sempre includere override `@media (prefers-reduced-motion: reduce)`.
 
 ---
 
@@ -262,3 +269,4 @@ Link: Calendly o equivalente
 - Sfondo navy per creare chiusura visiva coerente con il hero.
 - Questa sezione e' il conversion point principale. Non aggiungere distrazioni: nessun footer complesso, nessun link esterno vicino al form.
 - Dopo l'invio: messaggio di conferma inline (non redirect), testo tipo "Ricevuto. Ti scriviamo entro 24 ore per confermare l'orario."
+- **Animazione (MASTER.md §6):** Focus su input — bordo amber `#F59E0B` + `box-shadow: 0 0 0 3px rgba(245,158,11,0.15)`, transizione 200ms. Hover bottone submit: `#D97706` (amber-600) + `translateY(-1px)`, 150ms. Sempre includere override `@media (prefers-reduced-motion: reduce)`.
