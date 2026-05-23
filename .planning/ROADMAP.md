@@ -29,7 +29,12 @@ Decimal phases appear between their surrounding integers in numeric order.
   4. Copy brief IT is approved for all 8 landing sections — headline, body, CTA text (SPEC-04)
   5. Copy brief EN is approved for all 8 landing sections (SPEC-05)
   6. Tech stack decision is recorded with rationale (SPEC-06)
-**Plans**: TBD
+**Plans**: 3 plans
+
+Plans:
+- [ ] 01-01-PLAN.md — Lock decisions (SPEC-01: 4 agents, SPEC-06: Next.js stack) + finalize skill catalog (SPEC-03)
+- [ ] 01-02-PLAN.md — Generate design system with brainstorming + ui-ux-pro-max (SPEC-02)
+- [ ] 01-03-PLAN.md — Write and approve copy briefs IT and EN for all 8 sections (SPEC-04, SPEC-05)
 
 ### Phase 2: Build Landing Page
 **Goal**: A fully built, responsive landing page with all sections, design system applied, animations, and a working contact form
@@ -62,6 +67,6 @@ Phases execute in numeric order: 1 → 2 → 3
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Spec & Concept | 0/TBD | Not started | - |
+| 1. Spec & Concept | 0/3 | Ready to execute | - |
 | 2. Build Landing Page | 0/TBD | Not started | - |
 | 3. SEO & GEO | 0/TBD | Not started | - |
