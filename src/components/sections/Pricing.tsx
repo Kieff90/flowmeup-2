@@ -57,9 +57,9 @@ export function Pricing({ dict, lang }: PricingProps) {
   const agents = isEN ? agentsEN : agentsIT
 
   return (
-    <section className="bg-slate-50 py-12 md:py-16 lg:py-20">
+    <section aria-labelledby="pricing-heading" className="bg-slate-50 py-12 md:py-16 lg:py-20">
       <Container>
-        <h2 className="reveal text-3xl md:text-4xl font-bold text-slate-800 leading-[1.2]">
+        <h2 id="pricing-heading" className="reveal text-3xl md:text-4xl font-bold text-slate-800 leading-[1.2]">
           {headline}
         </h2>
 
@@ -70,40 +70,49 @@ export function Pricing({ dict, lang }: PricingProps) {
           {noBind}
         </p>
 
-        {/* Pricing table */}
+        {/* Pricing table — semantic <table> for screen readers */}
         <div className="rounded-xl border border-slate-200 overflow-hidden">
-          {/* Table header */}
-          <div className="grid grid-cols-[2fr_1fr_1fr] md:grid-cols-[2fr_1fr_1fr] bg-slate-100 px-6 py-3">
-            <span className="text-sm font-semibold text-slate-600 uppercase tracking-wide">{headerAgent}</span>
-            <span className="text-sm font-semibold text-slate-600 uppercase tracking-wide">{headerPrice}</span>
-            <span className="text-sm font-semibold text-slate-600 uppercase tracking-wide hidden md:block">{headerStatus}</span>
-          </div>
-
-          {/* Table rows */}
-          {agents.map((agent, idx) => (
-            <div
-              key={agent.name}
-              className={[
-                'reveal grid grid-cols-[2fr_1fr_1fr] md:grid-cols-[2fr_1fr_1fr] items-center px-6 py-4 hover:bg-slate-100 transition-colors',
-                idx < agents.length - 1 ? 'border-b border-slate-200' : '',
-              ].join(' ')}
-            >
-              <span className="text-base font-semibold text-slate-800">
-                {agent.name}
-              </span>
-              <span
-                className={[
-                  'text-2xl font-extrabold',
-                  agent.status === 'live' ? 'text-navy-900' : 'text-slate-300',
-                ].join(' ')}
-              >
-                {agent.price}
-              </span>
-              <span className="hidden md:block">
-                <Badge variant={agent.status} />
-              </span>
-            </div>
-          ))}
+          <table className="w-full border-collapse">
+            <thead className="bg-slate-100">
+              <tr>
+                <th scope="col" className="text-sm font-semibold text-slate-600 uppercase tracking-wide text-left px-6 py-3">
+                  {headerAgent}
+                </th>
+                <th scope="col" className="text-sm font-semibold text-slate-600 uppercase tracking-wide text-left px-6 py-3">
+                  {headerPrice}
+                </th>
+                <th scope="col" className="text-sm font-semibold text-slate-600 uppercase tracking-wide text-left px-6 py-3 hidden md:table-cell">
+                  {headerStatus}
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              {agents.map((agent, idx) => (
+                <tr
+                  key={agent.name}
+                  className={[
+                    'reveal hover:bg-slate-100 transition-colors',
+                    idx < agents.length - 1 ? 'border-b border-slate-200' : '',
+                  ].join(' ')}
+                >
+                  <td className="px-6 py-4 text-base font-semibold text-slate-800">
+                    {agent.name}
+                  </td>
+                  <td
+                    className={[
+                      'px-6 py-4 text-2xl font-extrabold',
+                      agent.status === 'live' ? 'text-navy-900' : 'text-slate-300',
+                    ].join(' ')}
+                  >
+                    {agent.price}
+                  </td>
+                  <td className="px-6 py-4 hidden md:table-cell">
+                    <Badge variant={agent.status} />
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
         </div>
 
         {/* Discount callout */}

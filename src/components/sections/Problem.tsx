@@ -16,10 +16,11 @@ export function Problem({ dict }: ProblemProps) {
   const bodyRef = useScrollReveal<HTMLDivElement>()
 
   return (
-    <section className="bg-slate-50 py-12 md:py-16 lg:py-20">
+    <section aria-labelledby="problem-heading" className="bg-slate-50 py-12 md:py-16 lg:py-20">
       <Container>
         <div className="max-w-2xl">
           <h2
+            id="problem-heading"
             ref={headingRef}
             className="reveal text-2xl md:text-3xl font-bold text-slate-800 leading-[1.2] mb-8"
           >

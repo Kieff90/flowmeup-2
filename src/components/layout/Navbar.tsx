@@ -13,20 +13,22 @@ export function Navbar({ dict, lang }: NavbarProps) {
   const ctaText = navbar?.cta ?? 'Parliamo del tuo processo'
 
   return (
-    <nav className="bg-navy-900 sticky top-0 z-50 h-16">
-      <Container className="h-full flex items-center justify-between">
-        <span className="text-white font-bold text-xl tracking-tight">Flowmeup</span>
+    <header>
+      <nav aria-label="Main navigation" className="bg-navy-900 sticky top-0 z-50 h-16">
+        <Container className="h-full flex items-center justify-between">
+          <span className="text-white font-bold text-xl tracking-tight">Flowmeup</span>
 
-        <div className="flex items-center gap-6">
-          <div className="hidden sm:block">
-            <LanguageSwitcher currentLang={lang} />
+          <div className="flex items-center gap-6">
+            <div className="hidden sm:block">
+              <LanguageSwitcher currentLang={lang} />
+            </div>
+
+            <Button variant="secondary-on-dark" href="#contact">
+              {ctaText}
+            </Button>
           </div>
-
-          <Button variant="secondary-on-dark" href="#contact">
-            {ctaText}
-          </Button>
-        </div>
-      </Container>
-    </nav>
+        </Container>
+      </nav>
+    </header>
   )
 }

@@ -55,9 +55,9 @@ export function ContactForm({ dict, lang }: ContactFormProps) {
   const labelClass = 'block text-sm font-semibold text-slate-300 mb-1'
 
   return (
-    <section id="contact" className="bg-navy-900 py-12 md:py-16 lg:py-20">
+    <section id="contact" aria-labelledby="contact-heading" className="bg-navy-900 py-12 md:py-16 lg:py-20">
       <Container>
-        <h2 className="reveal text-2xl md:text-3xl font-bold text-white leading-[1.2]">
+        <h2 id="contact-heading" className="reveal text-2xl md:text-3xl font-bold text-white leading-[1.2]">
           {headline}
         </h2>
         {subheadline && (
@@ -172,7 +172,7 @@ export function ContactForm({ dict, lang }: ContactFormProps) {
               href="#"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-amber-400 underline underline-offset-4 hover:text-amber-300 transition-colors text-base font-medium"
+              className="text-amber-400 underline underline-offset-4 hover:text-amber-300 transition-colors text-base font-medium focus-visible:outline focus-visible:outline-[3px] focus-visible:outline-amber-400 focus-visible:outline-offset-2 rounded-sm"
             >
               {calendarText}
             </a>

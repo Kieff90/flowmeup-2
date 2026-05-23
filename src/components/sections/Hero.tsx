@@ -12,11 +12,11 @@ export function Hero({ dict }: HeroProps) {
   const cta = hero?.cta ?? 'Parliamo del tuo processo'
 
   return (
-    <section className="bg-navy-900 min-h-[480px] md:min-h-[560px] flex items-center py-24 md:py-32">
+    <section aria-labelledby="hero-heading" className="bg-navy-900 min-h-[480px] md:min-h-[560px] flex items-center py-24 md:py-32">
       <Container>
         <div className="max-w-3xl">
           {/* H1 is NOT animated — SPEC-02 locked decision: headline must be immediately visible */}
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-white leading-[1.1] mb-6">
+          <h1 id="hero-heading" className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-white leading-[1.1] mb-6">
             {headline}
           </h1>
 

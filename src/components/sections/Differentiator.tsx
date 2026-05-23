@@ -16,9 +16,10 @@ export function Differentiator({ dict }: DifferentiatorProps) {
   const body = d?.body ?? 'Tutti gli agenti lavorano sulla stessa memoria. Quando Marco registra Bianchi Costruzioni con Voice Lead, la sera il titolare può chiedere "cosa sappiamo di Bianchi?" e avere la risposta completa. Nessun re-briefing, nessun "chiedilo a Mario", nessun copia-incolla tra fogli diversi. Il dato entra una volta e resta disponibile per tutto il team.'
 
   return (
-    <section className="bg-[#0F2349] py-12 md:py-16 lg:py-20">
+    <section aria-labelledby="differentiator-heading" className="bg-[#0F2349] py-12 md:py-16 lg:py-20">
       <div className="max-w-[1200px] mx-auto px-4 text-left md:text-center">
         <h2
+          id="differentiator-heading"
           ref={headingRef}
           className="text-2xl md:text-3xl font-bold text-white leading-[1.2] reveal"
         >

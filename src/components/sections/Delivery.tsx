@@ -71,9 +71,9 @@ export function Delivery({ dict }: DeliveryProps) {
   const steps = isEN ? stepsEN : stepsIT
 
   return (
-    <section className="bg-slate-100 py-12 md:py-16 lg:py-20">
+    <section aria-labelledby="delivery-heading" className="bg-slate-100 py-12 md:py-16 lg:py-20">
       <Container>
-        <h2 className="reveal text-3xl md:text-4xl font-bold text-slate-800 leading-[1.2]">
+        <h2 id="delivery-heading" className="reveal text-3xl md:text-4xl font-bold text-slate-800 leading-[1.2]">
           {headline}
         </h2>
         <p className="text-base lg:text-lg text-slate-600 mt-3 mb-10">

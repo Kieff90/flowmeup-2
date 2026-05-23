@@ -137,10 +137,11 @@ export function AgentCards({ lang = 'it', dict }: AgentCardsProps) {
     : 'Attivi subito o in arrivo. Ognuno risolve un processo commerciale specifico.')
 
   return (
-    <section className="bg-slate-50 py-12 md:py-16 lg:py-20">
+    <section aria-labelledby="agents-heading" className="bg-slate-50 py-12 md:py-16 lg:py-20">
       <Container>
         <div className="text-center mb-8">
           <h2
+            id="agents-heading"
             ref={headingRef}
             className="reveal text-3xl md:text-4xl font-bold text-slate-800 leading-[1.2]"
           >

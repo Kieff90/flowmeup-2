@@ -23,11 +23,14 @@ export function AgentCard({
 }: AgentData) {
   return (
     <div
+      role="article"
+      tabIndex={0}
       className="
         relative bg-white rounded-xl p-6 border border-slate-200
         min-h-[280px] cursor-pointer
         hover:shadow-[0_10px_30px_rgba(15,35,73,0.12)]
         hover:-translate-y-1 hover:border-slate-300
+        focus-visible:outline focus-visible:outline-[3px] focus-visible:outline-amber-400 focus-visible:outline-offset-2
         transition-all duration-200
       "
     >
@@ -35,7 +38,7 @@ export function AgentCard({
       <div className="absolute top-4 right-4">
         {badge === 'live' ? (
           <span className="inline-flex items-center gap-1 rounded-full px-2 py-1 text-[11px] font-bold uppercase tracking-[0.05em] bg-[#22C55E] text-white">
-            <span className="inline-block w-1.5 h-1.5 rounded-full bg-white animate-[live-pulse_2s_ease-in-out_infinite]" />
+            <span className="inline-block w-1.5 h-1.5 rounded-full bg-white animate-[live-pulse_2s_ease-in-out_infinite]" aria-hidden="true" />
             LIVE
           </span>
         ) : (
