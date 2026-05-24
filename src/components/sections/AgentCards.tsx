@@ -135,31 +135,46 @@ export function AgentCards({ lang = 'it', dict }: AgentCardsProps) {
   const subheadline = agentsDict?.subheadline ?? (lang === 'en'
     ? 'Live now or coming soon. Each one solves a specific sales process.'
     : 'Attivi subito o in arrivo. Ognuno risolve un processo commerciale specifico.')
+  const liveLabel = lang === 'en' ? 'Live' : 'Live'
+  const soonLabel = lang === 'en' ? 'Next' : 'In arrivo'
 
   return (
-    <section aria-labelledby="agents-heading" className="bg-slate-50 py-12 md:py-16 lg:py-20">
+    <section id="agents" aria-labelledby="agents-heading" className="bg-ink-100 py-12 md:py-16 lg:py-20">
       <Container>
-        <div className="text-center mb-8">
+        <div className="mb-10 max-w-3xl">
+          <p className="mb-4 font-heading text-sm font-black text-ink-600">
+            {lang === 'en' ? 'THE AGENTS' : 'GLI AGENTI'}
+          </p>
           <h2
             id="agents-heading"
             ref={headingRef}
-            className="reveal text-3xl md:text-4xl font-bold text-slate-800 leading-[1.2]"
+            className="reveal font-heading text-3xl font-black leading-[1.02] text-ink-950 md:text-5xl"
           >
             {headline}
           </h2>
-          <p className="text-base text-slate-600 mt-3">{subheadline}</p>
+          <p className="mt-4 text-lg font-medium leading-relaxed text-ink-700">{subheadline}</p>
         </div>
 
         <motion.div
           ref={gridRef}
-          className="grid grid-cols-1 md:grid-cols-2 gap-6"
+          className="grid grid-cols-1 gap-5 md:grid-cols-6"
           variants={containerVariants}
           initial="hidden"
           animate={isInView ? 'visible' : 'hidden'}
         >
-          {agents.map((agent) => (
-            <motion.div key={agent.name} variants={cardVariants}>
-              <AgentCard {...agent} />
+          {agents.map((agent, idx) => (
+            <motion.div
+              key={agent.name}
+              variants={cardVariants}
+              className={idx < 2 ? 'md:col-span-3' : 'md:col-span-3 lg:col-span-3'}
+            >
+              <AgentCard
+                {...agent}
+                featured={idx < 2}
+                liveLabel={liveLabel}
+                soonLabel={soonLabel}
+                className={idx === 0 ? 'bg-signal-400' : ''}
+              />
             </motion.div>
           ))}
         </motion.div>

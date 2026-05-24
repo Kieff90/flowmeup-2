@@ -3,6 +3,7 @@
     "cta": "Let's talk about your process"
   },
   "hero": {
+    "kicker": "For field sales teams",
     "headline": "Your sales rep logs a lead in 90 seconds. From their phone. While driving.",
     "subheadline": "For business owners with field sales teams: leads don't go cold because your reps aren't working. They go cold because no one opens their records from the car between appointments. Flowmeup fixes that. Nothing to install. Nothing to change.",
     "cta": "Let's talk about your process"
@@ -51,6 +52,6 @@
     "error": "An error occurred. Please try again."
   },
   "footer": {
-    "copyright": "© 2025 Flowmeup. All rights reserved."
+    "copyright": "© 2026 Flowmeup. All rights reserved."
   }
 }

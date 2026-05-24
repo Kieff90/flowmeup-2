@@ -1,36 +1,52 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=Source+Sans+3:wght@400;500;600;700&display=swap');
 
 @import "tailwindcss";
 @config "../../tailwind.config.ts";
 
 :root {
   /* Semantic tokens */
-  --color-background:              #F8FAFC;
-  --color-surface:                 #FFFFFF;
-  --color-surface-alt:             #F1F5F9;
-  --color-text-primary:            #0F172A;
-  --color-text-secondary:          #475569;
-  --color-text-muted:              #94A3B8;
-  --color-text-on-dark:            #FFFFFF;
-  --color-text-on-dark-secondary:  #93C5FD;
-  --color-border:                  #E2E8F0;
-  --color-border-strong:           #CBD5E1;
-  --color-primary:                 #0F2349;
-  --color-primary-dark:            #071730;
-  --color-accent:                  #F59E0B;
-  --color-accent-hover:            #D97706;
+  --color-background:              #F3E7D3;
+  --color-surface:                 #FFF8EA;
+  --color-surface-alt:             #E6D7BE;
+  --color-text-primary:            #17130C;
+  --color-text-secondary:          #4E4639;
+  --color-text-muted:              #766B5D;
+  --color-text-on-dark:            #FFF8EA;
+  --color-text-on-dark-secondary:  #D8C8AF;
+  --color-border:                  #C7B79A;
+  --color-border-strong:           #9B8C73;
+  --color-primary:                 #17130C;
+  --color-primary-dark:            #0D0A06;
+  --color-accent:                  #F2B705;
+  --color-accent-hover:            #D99A00;
   --color-live-badge:              #22C55E;
-  --color-live-badge-text:         #FFFFFF;
-  --color-coming-soon-badge:       #CBD5E1;
-  --color-coming-soon-badge-text:  #475569;
-  --color-error:                   #EF4444;
-  --color-focus-ring:              #FBBF24;
+  --color-live-badge-text:         #07130A;
+  --color-coming-soon-badge:       #D2C1A3;
+  --color-coming-soon-badge-text:  #4E4639;
+  --color-error:                   #C2410C;
+  --color-focus-ring:              #F2B705;
 
   /* Typography */
-  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-sans: 'Source Sans 3', system-ui, -apple-system, sans-serif;
+  --font-heading: 'Archivo', 'Source Sans 3', system-ui, sans-serif;
 
   /* Base unit */
   --space-unit: 8px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-background);
+  color: var(--color-text-primary);
+  font-family: var(--font-sans);
+}
+
+::selection {
+  background: var(--color-accent);
+  color: var(--color-primary);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -50,4 +66,20 @@
 .reveal.visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+.industrial-grid {
+  background-image:
+    linear-gradient(rgba(23, 19, 12, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(23, 19, 12, 0.07) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+.font-heading {
+  font-family: var(--font-heading);
 }

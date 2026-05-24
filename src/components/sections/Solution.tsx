@@ -1,5 +1,5 @@
 'use client'
-import { MessageCircle, FileSpreadsheet, Calendar } from 'lucide-react'
+import { FileSpreadsheet, MessageCircle, Wrench } from 'lucide-react'
 import { Container } from '@/components/ui/Container'
 import { useScrollReveal } from '@/hooks/useScrollReveal'
 
@@ -10,44 +10,51 @@ interface SolutionProps {
 const icons = [
   { Icon: MessageCircle, label: 'WhatsApp' },
   { Icon: FileSpreadsheet, label: 'Excel' },
-  { Icon: Calendar, label: 'Calendar' },
+  { Icon: Wrench, label: 'Done-for-you' },
 ]
 
 export function Solution({ dict }: SolutionProps) {
   const solution = dict.solution as Record<string, string> | undefined
   const headline = solution?.headline ?? ''
   const body = solution?.body ?? ''
+  const isEN = headline.startsWith('AI')
 
   const headingRef = useScrollReveal<HTMLHeadingElement>()
   const bodyRef = useScrollReveal<HTMLDivElement>()
 
   return (
-    <section aria-labelledby="solution-heading" className="bg-slate-100 py-12 md:py-16 lg:py-20">
+    <section aria-labelledby="solution-heading" className="bg-ink-950 py-12 md:py-16 lg:py-20">
       <Container>
-        <div className="max-w-2xl">
+        <div className="grid gap-10 lg:grid-cols-[1fr_0.8fr] lg:items-end">
+          <div>
+            <p className="mb-4 font-heading text-sm font-black text-signal-300">
+              {isEN ? 'WHAT CHANGES' : 'COSA CAMBIA'}
+            </p>
           <h2
             id="solution-heading"
             ref={headingRef}
-            className="reveal text-2xl md:text-3xl font-bold text-slate-800 leading-[1.2] mb-6"
+              className="reveal font-heading text-3xl font-black leading-[1.02] text-ink-50 md:text-5xl"
           >
             {headline}
           </h2>
 
-          <div ref={bodyRef} className="reveal" style={{ transitionDelay: '150ms' }}>
-            <p className="text-[17px] lg:text-lg text-slate-700 leading-relaxed mb-8">
+            <p
+              ref={bodyRef}
+              className="reveal mt-6 max-w-3xl text-[18px] font-medium leading-relaxed text-ink-200 lg:text-xl"
+              style={{ transitionDelay: '150ms' }}
+            >
               {body}
             </p>
+          </div>
 
-            {/* Inline tool icons — lightweight, no images */}
-            <div className="flex items-center gap-6">
+          <div className="grid gap-3">
               {icons.map(({ Icon, label }) => (
-                <div key={label} className="flex items-center gap-2 text-slate-600">
-                  <Icon size={20} className="text-amber-500" aria-hidden="true" />
-                  <span className="text-sm font-medium">{label}</span>
+              <div key={label} className="flex items-center gap-3 border border-ink-50/20 px-4 py-4 text-ink-50">
+                <Icon size={22} className="text-signal-300" aria-hidden="true" />
+                <span className="font-heading text-base font-black">{label}</span>
                 </div>
               ))}
             </div>
-          </div>
         </div>
       </Container>
     </section>

@@ -8,6 +8,10 @@ export type AgentData = {
   afterLabel: string
   trigger: string
   description: string
+  liveLabel?: string
+  soonLabel?: string
+  className?: string
+  featured?: boolean
 }
 
 export function AgentCard({
@@ -20,66 +24,63 @@ export function AgentCard({
   afterLabel,
   trigger,
   description,
+  liveLabel = 'LIVE',
+  soonLabel = 'In arrivo',
+  className = '',
+  featured = false,
 }: AgentData) {
   return (
     <div
       role="article"
       tabIndex={0}
-      className="
-        relative bg-white rounded-xl p-6 border border-slate-200
-        min-h-[280px] cursor-pointer
-        hover:shadow-[0_10px_30px_rgba(15,35,73,0.12)]
-        hover:-translate-y-1 hover:border-slate-300
-        focus-visible:outline focus-visible:outline-[3px] focus-visible:outline-amber-400 focus-visible:outline-offset-2
-        transition-all duration-200
-      "
+      className={[
+        'relative cursor-pointer border-2 border-ink-900 bg-ink-50 p-5 transition-all duration-200',
+        'hover:-translate-y-1 hover:bg-white hover:shadow-[8px_8px_0_rgba(23,19,12,0.22)]',
+        'focus-visible:outline focus-visible:outline-[3px] focus-visible:outline-signal-300 focus-visible:outline-offset-2',
+        featured ? 'min-h-[360px] md:p-7' : 'min-h-[280px]',
+        className,
+      ].join(' ')}
     >
-      {/* Badge — top-right absolute */}
       <div className="absolute top-4 right-4">
         {badge === 'live' ? (
-          <span className="inline-flex items-center gap-1 rounded-full px-2 py-1 text-[11px] font-bold uppercase tracking-[0.05em] bg-[#22C55E] text-white">
+          <span className="inline-flex items-center gap-1 bg-[#22C55E] px-2.5 py-1 font-heading text-xs font-black text-ink-950">
             <span className="inline-block w-1.5 h-1.5 rounded-full bg-white animate-[live-pulse_2s_ease-in-out_infinite]" aria-hidden="true" />
-            LIVE
+            {liveLabel}
           </span>
         ) : (
-          <span className="inline-flex items-center rounded-full px-2 py-1 text-[11px] font-semibold uppercase tracking-[0.04em] bg-slate-300 text-slate-600">
-            COMING SOON
+          <span className="inline-flex items-center bg-ink-300 px-2.5 py-1 font-heading text-xs font-bold text-ink-700">
+            {soonLabel}
           </span>
         )}
       </div>
 
-      {/* Agent name — right-padded to prevent overlap with badge */}
-      <h3 className="text-xl font-bold text-slate-800 pr-20 leading-snug">
+      <h3 className="pr-24 font-heading text-2xl font-black leading-none text-ink-950">
         {name}
       </h3>
 
-      {/* Tagline */}
-      <p className="text-sm text-slate-500 mt-1">{tagline}</p>
+      <p className="mt-2 text-base font-semibold text-ink-700">{tagline}</p>
 
-      {/* Before / After stats block */}
-      <div className="flex items-end gap-3 mt-4">
+      <div className="mt-6 grid grid-cols-[1fr_auto_1fr] items-end gap-3 border-y-2 border-ink-900 py-5">
         <div className="flex flex-col items-start">
-          <span className="text-2xl font-extrabold text-slate-500 leading-tight">
+          <span className="font-heading text-2xl font-black leading-tight text-ink-500 md:text-3xl">
             {beforeValue}
           </span>
-          <span className="text-xs text-slate-400 mt-0.5">{beforeLabel}</span>
+          <span className="mt-1 text-xs font-bold text-ink-600">{beforeLabel}</span>
         </div>
 
-        <span className="text-slate-300 text-xl font-bold mb-5">→</span>
+        <span className="mb-6 font-heading text-2xl font-black text-signal-500">→</span>
 
         <div className="flex flex-col items-start">
-          <span className="text-2xl font-extrabold text-amber-500 leading-tight">
+          <span className="font-heading text-2xl font-black leading-tight text-ink-950 md:text-3xl">
             {afterValue}
           </span>
-          <span className="text-xs text-slate-400 mt-0.5">{afterLabel}</span>
+          <span className="mt-1 text-xs font-bold text-ink-600">{afterLabel}</span>
         </div>
       </div>
 
-      {/* Trigger line */}
-      <p className="text-sm font-semibold text-slate-700 mt-3">{trigger}</p>
+      <p className="mt-5 font-heading text-base font-black leading-snug text-ink-950">{trigger}</p>
 
-      {/* Description */}
-      <p className="text-sm text-slate-600 leading-relaxed mt-2">
+      <p className="mt-3 text-base leading-relaxed text-ink-700">
         {description}
       </p>
     </div>
