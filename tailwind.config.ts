@@ -132,9 +132,12 @@ const config: Config = {
         'cta-focus':  '0 0 0 3px rgba(245, 158, 11, 0.25)',
       },
       animation: {
-        'live-pulse': 'live-pulse 2s ease-in-out infinite',
-        'reveal':     'reveal 400ms ease-out forwards',
-        'fade-in':    'fade-in 200ms ease-out forwards',
+        'live-pulse':  'live-pulse 2s ease-in-out infinite',
+        'reveal':      'reveal 400ms ease-out forwards',
+        'fade-in':     'fade-in 200ms ease-out forwards',
+        'orbit-ring':  'orbit-ring 14s linear infinite',
+        'ticker':      'ticker 28s linear infinite',
+        'cloud-drift': 'cloud-drift 22s ease-in-out infinite alternate',
       },
       keyframes: {
         'live-pulse': {
@@ -148,6 +151,18 @@ const config: Config = {
         'fade-in': {
           from: { opacity: '0' },
           to:   { opacity: '1' },
+        },
+        'orbit-ring': {
+          from: { transform: 'rotateY(0deg)' },
+          to:   { transform: 'rotateY(-360deg)' },
+        },
+        'ticker': {
+          from: { transform: 'translateX(0)' },
+          to:   { transform: 'translateX(-50%)' },
+        },
+        'cloud-drift': {
+          '0%':   { transform: 'translateX(0px) translateY(0px)' },
+          '100%': { transform: 'translateX(20px) translateY(-8px)' },
         },
       },
     },

@@ -1,6 +1,5 @@
+import { Globe } from 'lucide-react'
 import { Container } from '@/components/ui/Container'
-import { Button } from '@/components/ui/Button'
-import { LanguageSwitcher } from '@/components/layout/LanguageSwitcher'
 import type { Locale } from '@/types/i18n'
 
 interface NavbarProps {
@@ -9,28 +8,77 @@ interface NavbarProps {
 }
 
 export function Navbar({ dict, lang }: NavbarProps) {
-  const navbar = dict.navbar as Record<string, string> | undefined
-  const ctaText = navbar?.cta ?? 'Parliamo del tuo processo'
+  const navbar = dict.navbar as Record<string, unknown> | undefined
+  const links = navbar?.links as Record<string, string> | undefined
+  const ctaText = (navbar?.cta as string) ?? (lang === 'it' ? 'Parliamo' : "Let's talk")
+  const isIT = lang === 'it'
+
+  const navLinks = [
+    { label: links?.about      ?? (isIT ? 'Chi siamo'      : 'About'),        href: '#problem'  },
+    { label: links?.agents     ?? (isIT ? 'Agenti'         : 'Agents'),       href: '#agents'   },
+    { label: links?.howItWorks ?? (isIT ? 'Come funziona'  : 'How it works'), href: '#solution' },
+    { label: links?.contact    ?? (isIT ? 'Contatti'       : 'Contact'),      href: '#contact'  },
+  ]
 
   return (
-    <header>
-      <nav aria-label="Main navigation" className="bg-ink-950 sticky top-0 z-50 h-16 border-b border-signal-400/70">
-        <Container className="h-full flex items-center justify-between">
-          <span className="font-heading text-ink-50 font-black text-xl tracking-normal">Flowmeup</span>
+    <header className="sticky top-0 z-50 border-b border-gray-100 bg-white/95 backdrop-blur-sm">
+      <Container>
+        <nav aria-label="Main navigation" className="flex h-16 items-center justify-between gap-6">
+          <a
+            href={`/${lang}`}
+            className="font-heading text-xl font-black tracking-tight text-[#0a1628]"
+          >
+            Flowmeup
+          </a>
 
-          <div className="flex items-center gap-4 md:gap-6">
-            <div className="hidden sm:block">
-              <LanguageSwitcher currentLang={lang} />
+          <ul className="hidden items-center gap-8 md:flex" role="list">
+            {navLinks.map((item) => (
+              <li key={item.label}>
+                <a
+                  href={item.href}
+                  className="font-heading text-[11px] font-black uppercase tracking-[0.14em] text-[#0a1628]/60 transition-colors hover:text-[#0a1628]"
+                >
+                  {item.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+
+          <div className="flex items-center gap-4">
+            <div className="hidden items-center gap-1.5 md:flex" aria-label="Language switcher">
+              <Globe size={13} className="text-[#0a1628]/40" aria-hidden="true" />
+              <a
+                href="/it"
+                className={[
+                  'font-heading text-[11px] font-black transition-colors',
+                  lang === 'it' ? 'text-[#0a1628]' : 'text-[#0a1628]/35 hover:text-[#0a1628]',
+                ].join(' ')}
+                aria-current={lang === 'it' ? 'true' : undefined}
+              >
+                IT
+              </a>
+              <span className="text-[#0a1628]/20" aria-hidden="true">/</span>
+              <a
+                href="/en"
+                className={[
+                  'font-heading text-[11px] font-black transition-colors',
+                  lang === 'en' ? 'text-[#0a1628]' : 'text-[#0a1628]/35 hover:text-[#0a1628]',
+                ].join(' ')}
+                aria-current={lang === 'en' ? 'true' : undefined}
+              >
+                EN
+              </a>
             </div>
 
-            <div className="hidden sm:block">
-              <Button variant="secondary-on-dark" href="#contact">
-                {ctaText}
-              </Button>
-            </div>
+            <a
+              href="#contact"
+              className="inline-flex items-center rounded-full bg-[#CCFF4E] px-5 py-2 font-heading text-[11px] font-black uppercase tracking-[0.14em] text-[#0a1628] transition-transform hover:scale-105 active:scale-95"
+            >
+              {ctaText}
+            </a>
           </div>
-        </Container>
-      </nav>
+        </nav>
+      </Container>
     </header>
   )
 }

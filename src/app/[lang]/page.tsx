@@ -10,7 +10,6 @@ import { Differentiator } from '@/components/sections/Differentiator'
 import { Delivery } from '@/components/sections/Delivery'
 import { Pricing } from '@/components/sections/Pricing'
 import { ContactForm } from '@/components/sections/ContactForm'
-import { VideoLoop } from '@/components/sections/VideoLoop'
 
 export default async function HomePage({
   params,
@@ -25,7 +24,6 @@ export default async function HomePage({
       <Navbar dict={dict} lang={lang} />
       <main>
         <Hero dict={dict} />
-        <VideoLoop lang={lang} />
         <Problem dict={dict} />
         <Solution dict={dict} />
         <AgentCards lang={lang} dict={dict} />

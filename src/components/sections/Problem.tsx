@@ -11,23 +11,23 @@ export function Problem({ dict }: ProblemProps) {
   const headline = problem?.headline ?? ''
   const para1 = problem?.para1 ?? ''
   const para2 = problem?.para2 ?? ''
-  const isEN = headline.startsWith('Every')
+  const isEN = headline.startsWith('Fewer')
 
   const headingRef = useScrollReveal<HTMLHeadingElement>()
   const bodyRef = useScrollReveal<HTMLDivElement>()
 
   return (
-    <section aria-labelledby="problem-heading" className="industrial-grid bg-ink-100 py-12 md:py-16 lg:py-20">
+    <section aria-labelledby="problem-heading" className="bg-white py-14 md:py-20 lg:py-24">
       <Container>
-        <div className="grid gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
+        <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
           <div>
-            <p className="mb-4 font-heading text-sm font-black text-ink-600">
-              {isEN ? 'THE REAL LEAK' : 'LA PERDITA REALE'}
+            <p className="mb-4 font-heading text-[11px] font-black uppercase tracking-[0.18em] text-sky-700/70">
+              {isEN ? 'Why it matters' : 'Perche conta'}
             </p>
           <h2
             id="problem-heading"
             ref={headingRef}
-              className="reveal font-heading text-3xl font-black leading-[1.02] text-ink-950 md:text-5xl"
+              className="reveal font-heading text-4xl font-black leading-[1] text-sky-950 md:text-6xl"
           >
             {headline}
           </h2>
@@ -35,14 +35,14 @@ export function Problem({ dict }: ProblemProps) {
 
           <div
             ref={bodyRef}
-            className="reveal border-l-4 border-ink-950 bg-ink-50 px-5 py-6 md:px-8"
+            className="reveal rounded-[24px] border border-sky-100 bg-sky-50/70 px-5 py-6 shadow-[0_16px_50px_rgba(8,47,73,0.07)] md:px-8"
             style={{ transitionDelay: '150ms' }}
           >
-            <p className="text-[18px] font-medium leading-relaxed text-ink-800 lg:text-xl">
+            <p className="text-[18px] font-medium leading-relaxed text-sky-900/78 lg:text-xl">
               {para1}
             </p>
 
-            <p className="mt-6 text-[18px] font-semibold leading-relaxed text-ink-950 lg:text-xl">
+            <p className="mt-5 text-[18px] font-semibold leading-relaxed text-sky-950 lg:text-xl">
               {para2}
             </p>
           </div>

@@ -1,152 +1,226 @@
-import { Container } from '@/components/ui/Container'
-import { Button } from '@/components/ui/Button'
-
-interface HeroProps {
-  dict: Record<string, unknown>
-}
-
-function RotatingBadge({ isEN }: { isEN: boolean }) {
-  const text = isEN
-    ? '✦ VOICE LEAD ✦ 90 SECONDS ✦ FIELD SALES ✦ AI AGENT ✦ VOICE LEAD ✦ 90 SECONDS ✦ AI AGENT ✦ '
-    : '✦ VOICE LEAD ✦ 90 SECONDI ✦ VENDITA CAMPO ✦ AGENTE AI ✦ VOICE LEAD ✦ 90 SECONDI ✦ AGENTE AI ✦ '
-
+function CloudShape({ style }: { style?: React.CSSProperties }) {
   return (
-    <div className="relative size-[220px] shrink-0 select-none" aria-hidden="true">
-      {/* Rotating text ring */}
-      <div
-        className="absolute inset-0"
-        style={{ animation: 'spin-slow 22s linear infinite' }}
-      >
-        <svg viewBox="0 0 220 220" className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <path
-              id="fmu-ring"
-              d="M 110,110 m -90,0 a 90,90 0 1,1 180,0 a 90,90 0 1,1 -180,0"
-            />
-          </defs>
-          <text
-            fontSize="10"
-            letterSpacing="2.6"
-            fontFamily="Archivo, sans-serif"
-            fontWeight="700"
-            fill="#F2B705"
-          >
-            <textPath href="#fmu-ring">{text}</textPath>
-          </text>
-        </svg>
-      </div>
-
-      {/* Static center */}
-      <div className="absolute inset-0 flex items-center justify-center">
-        <div
-          className="flex size-[68px] items-center justify-center rounded-full"
-          style={{ border: '1px solid rgba(242,183,5,0.22)' }}
-        >
-          <span
-            className="size-2.5 rounded-full bg-signal-400"
-            style={{ animation: 'live-pulse 2s ease-in-out infinite' }}
-          />
-        </div>
+    <div className="pointer-events-none absolute select-none" style={style} aria-hidden="true">
+      <div className="relative h-20 w-48">
+        <div className="absolute inset-0 rounded-full bg-white/80 blur-3xl" />
+        <div className="absolute -left-8 top-3 h-14 w-32 rounded-full bg-white/70 blur-2xl" />
+        <div className="absolute right-0 top-2 h-12 w-28 rounded-full bg-white/65 blur-2xl" />
       </div>
     </div>
   )
 }
 
+const WAVE_BARS = [3, 6, 10, 7, 13, 9, 5, 11, 7, 4, 9, 6]
+
+function CardNotaLead({ isEN }: { isEN: boolean }) {
+  return (
+    <div className="flex h-full w-full flex-col justify-between rounded-2xl bg-[#0f172a] p-3.5 shadow-2xl">
+      <div className="flex items-end gap-[2px]" style={{ height: '28px' }}>
+        {WAVE_BARS.map((h, i) => (
+          <div
+            key={i}
+            className="w-1 rounded-sm bg-lime-400"
+            style={{ height: `${h * 2}px`, opacity: 0.7 + (i % 3) * 0.1 }}
+          />
+        ))}
+      </div>
+      <div>
+        <p className="font-heading text-[10px] font-black text-lime-400">
+          {isEN ? '✓ Logged in 30s' : '✓ Registrato in 30s'}
+        </p>
+        <p className="font-heading text-sm font-black leading-tight text-white">
+          {isEN ? 'Voice Lead' : 'Nota Lead'}
+        </p>
+      </div>
+    </div>
+  )
+}
+
+function CardCercaProspect({ isEN }: { isEN: boolean }) {
+  const tags = isEN ? ['Northern Italy', 'B2B', '20-100'] : ['Lombardia', 'Serramenti', 'B2B']
+  return (
+    <div className="flex h-full w-full flex-col justify-between rounded-2xl bg-white p-3.5 shadow-2xl">
+      <div className="flex flex-wrap gap-1">
+        {tags.map((tag) => (
+          <span key={tag} className="rounded-full bg-gray-100 px-1.5 py-px text-[8px] font-bold text-gray-500">
+            {tag}
+          </span>
+        ))}
+      </div>
+      <div>
+        <p className="font-heading text-3xl font-black leading-none text-[#0a1628]">47</p>
+        <p className="font-heading text-[10px] font-black text-[#0a1628]">
+          {isEN ? 'prospects' : 'prospect'}
+        </p>
+      </div>
+      <p className="text-[9px] font-semibold text-gray-400">
+        {isEN ? 'found in 28 min' : 'trovati in 28 min'}
+      </p>
+    </div>
+  )
+}
+
+function CardBriefCliente({ isEN }: { isEN: boolean }) {
+  return (
+    <div className="flex h-full w-full flex-col gap-1.5 rounded-2xl bg-white p-3.5 shadow-2xl">
+      <p className="font-heading text-[10px] font-black text-[#0a1628]">
+        {isEN ? 'Client Brief' : 'Brief Cliente'}
+      </p>
+      <p className="text-[10px] font-bold text-gray-700">Rossi Impianti</p>
+      <div className="flex flex-col gap-0.5">
+        <p className="text-[8px] text-gray-400">
+          {isEN ? 'Last contact: ' : 'Ultimo contatto: '}
+          <span className="font-bold text-gray-600">{isEN ? '3d ago' : '3 gg fa'}</span>
+        </p>
+        <p className="text-[8px] text-gray-400">
+          {isEN ? 'Open deal: ' : 'Offerta aperta: '}
+          <span className="font-bold text-gray-600">€12.400</span>
+        </p>
+      </div>
+      <div className="mt-auto flex items-center gap-1">
+        <div className="size-1.5 rounded-full bg-green-400" />
+        <p className="text-[8px] font-bold text-gray-600">
+          {isEN ? 'In negotiation' : 'In trattativa'}
+        </p>
+      </div>
+    </div>
+  )
+}
+
+const RADAR_LEADS = [
+  { name: 'Bianchi', days: '8', color: 'bg-orange-500' },
+  { name: 'Rossi',   days: '12', color: 'bg-orange-400' },
+  { name: 'Ferri',   days: '15', color: 'bg-yellow-500' },
+]
+
+function CardRadarCommerciale({ isEN }: { isEN: boolean }) {
+  return (
+    <div className="flex h-full w-full flex-col gap-2 rounded-2xl bg-[#CCFF4E] p-3.5 shadow-2xl">
+      <p className="font-heading text-[10px] font-black text-[#0a1628]">
+        {isEN ? 'Sales Radar' : 'Radar Commerciale'}
+      </p>
+      {RADAR_LEADS.map(({ name, days, color }) => (
+        <div key={name} className="flex items-center justify-between">
+          <div className="flex items-center gap-1.5">
+            <div className={`size-1.5 rounded-full ${color}`} />
+            <p className="text-[9px] font-bold text-[#0a1628]">{name}</p>
+          </div>
+          <p className="text-[9px] font-semibold text-[#0a1628]/60">
+            {days}{isEN ? 'd' : 'gg'}
+          </p>
+        </div>
+      ))}
+    </div>
+  )
+}
+
+interface HeroProps {
+  dict: Record<string, unknown>
+}
+
 export function Hero({ dict }: HeroProps) {
   const hero = dict.hero as Record<string, string> | undefined
-  const isEN = (hero?.headline ?? '').startsWith('Your')
+  const isEN = (hero?.headline ?? '').startsWith('AI')
+
+  const headline     = hero?.headline     ?? (isEN ? 'AI agents for faster sales'        : 'Agenti AI per vendite più veloci')
+  const subheadline  = hero?.subheadline  ?? (isEN
+    ? 'A composable suite to automate prospecting, qualification, follow-up and sales ops.'
+    : 'Una suite componibile per automatizzare ricerca, qualificazione, follow-up e operazioni sales.')
+  const eyebrow      = hero?.eyebrow      ?? (isEN ? 'AI agents for sales'               : 'Agenti AI per il sales')
+  const ctaLabel     = hero?.cta          ?? (isEN ? "Let's talk"                        : 'Parliamo')
+  const ctaSecondary = hero?.ctaSecondary ?? (isEN ? 'View agents'                       : 'Scopri gli agenti')
+
+  const orbitalCards = [
+    <CardNotaLead      key="nota-lead"     isEN={isEN} />,
+    <CardCercaProspect key="cerca-prospect" isEN={isEN} />,
+    <CardBriefCliente  key="brief-cliente"  isEN={isEN} />,
+    <CardRadarCommerciale key="radar"       isEN={isEN} />,
+  ]
 
   return (
     <section
       aria-labelledby="hero-heading"
-      className="relative min-h-[100svh] overflow-hidden bg-ink-950"
+      className="relative overflow-hidden"
+      style={{
+        background: 'linear-gradient(180deg, #0c5d9e 0%, #1a8fd6 22%, #3da6e8 48%, #7cc6f2 72%, #b5ddf7 88%, #d9eefa 100%)',
+        minHeight: '100svh',
+      }}
     >
-      {/* Ambient gradient orbs */}
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute -left-48 -top-48 size-[680px] rounded-full"
-        style={{ background: 'radial-gradient(circle, rgba(242,183,5,0.13) 0%, transparent 65%)' }}
-      />
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute -right-24 bottom-0 size-[520px] rounded-full"
-        style={{ background: 'radial-gradient(circle, rgba(242,183,5,0.07) 0%, transparent 65%)' }}
-      />
+      {/* Clouds */}
+      <CloudShape style={{ top: '7%',  left: '3%',   transform: 'scale(2.0)',           animation: 'cloud-drift 22s ease-in-out infinite alternate' }} />
+      <CloudShape style={{ top: '5%',  right: '4%',  transform: 'scale(1.5) scaleX(-1)', animation: 'cloud-drift 28s ease-in-out infinite alternate-reverse' }} />
+      <CloudShape style={{ top: '26%', left: '16%',  transform: 'scale(1.1)', opacity: 0.7, animation: 'cloud-drift 18s ease-in-out infinite alternate' }} />
+      <CloudShape style={{ top: '20%', right: '18%', transform: 'scale(0.9)', opacity: 0.6, animation: 'cloud-drift 24s ease-in-out infinite alternate-reverse' }} />
+      <CloudShape style={{ top: '44%', left: '42%',  transform: 'scale(0.7)', opacity: 0.45 }} />
 
-      <Container className="relative z-10 flex min-h-[100svh] flex-col justify-center gap-16 py-24 lg:flex-row lg:items-center lg:gap-24">
-        {/* Left: copy */}
-        <div className="flex-1">
-          {/* Live pill */}
-          <p className="mb-7 inline-flex items-center gap-2 px-3 py-1 font-heading text-[11px] font-black uppercase tracking-[0.14em] text-signal-400"
-            style={{ border: '1px solid rgba(242,183,5,0.28)' }}>
-            <span
-              aria-hidden="true"
-              className="size-1.5 rounded-full bg-signal-400"
-              style={{ animation: 'live-pulse 2s ease-in-out infinite' }}
-            />
-            {isEN ? '2 Agents Live' : '2 Agenti Live'}
-          </p>
+      {/* Content */}
+      <div className="relative z-10 flex min-h-[100svh] flex-col items-center px-4 pb-12 pt-28 text-center">
 
-          <h1
-            id="hero-heading"
-            className="font-heading font-black leading-[0.93] tracking-[-0.025em] text-ink-50"
-            style={{ fontSize: 'clamp(54px, 8.5vw, 112px)' }}
+        {/* Eyebrow */}
+        <p className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/15 px-4 py-1.5 font-heading text-[11px] font-black uppercase tracking-[0.15em] text-white backdrop-blur-sm">
+          {eyebrow}
+        </p>
+
+        {/* H1 */}
+        <h1
+          id="hero-heading"
+          className="max-w-3xl font-heading font-black leading-[0.95] tracking-tight text-white"
+          style={{ fontSize: 'clamp(42px, 7vw, 84px)' }}
+        >
+          {headline}
+        </h1>
+
+        {/* Subtitle */}
+        <p className="mt-6 max-w-xl text-base font-medium leading-relaxed text-white/85 md:text-lg">
+          {subheadline}
+        </p>
+
+        {/* CTAs */}
+        <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
+          <a
+            href="#contact"
+            className="inline-flex items-center gap-2.5 rounded-full bg-[#CCFF4E] px-7 py-3.5 font-heading text-sm font-black uppercase tracking-widest text-[#0a1628] transition-transform hover:scale-105 active:scale-95"
           >
-            {isEN ? (
-              <>Lead.<br />In 90 sec.<br />Done.</>
-            ) : (
-              <>Lead.<br />In 90 sec.<br />Fatto.</>
-            )}
-          </h1>
+            {ctaLabel}
+            <span className="inline-flex size-5 items-center justify-center rounded-full bg-[#0a1628]">
+              <svg viewBox="0 0 10 10" className="size-3" fill="none">
+                <path d="M2 8L8 2M8 2H4M8 2V6" stroke="#CCFF4E" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </span>
+          </a>
+          <a
+            href="#agents"
+            className="inline-flex items-center rounded-full border-2 border-white/50 px-7 py-3.5 font-heading text-sm font-black uppercase tracking-widest text-white backdrop-blur-sm transition-colors hover:border-white hover:bg-white/10"
+          >
+            {ctaSecondary}
+          </a>
+        </div>
 
-          <p className="mt-8 max-w-[44ch] text-lg font-medium leading-relaxed text-ink-400">
-            {isEN
-              ? "Your rep sends a voice note from the car. The agent transcribes, structures, pushes to CRM. No app to install, no training, no friction."
-              : "Il commerciale manda un vocale dal furgone. L'agente trascrive, struttura, aggiorna il CRM. Nessuna app, nessun corso, zero attrito."}
-          </p>
-
-          <div className="mt-10 flex flex-wrap items-center gap-5">
-            <Button variant="primary" href="#contact">
-              {hero?.cta ?? (isEN ? "Let's talk" : 'Parliamo')}
-            </Button>
-            <a
-              href="#agents"
-              className="font-heading text-sm font-black tracking-wider text-ink-500 underline decoration-ink-700 underline-offset-4 transition-colors hover:text-ink-200 hover:decoration-ink-400"
-            >
-              {isEN ? 'The 4 agents ↓' : 'I 4 agenti ↓'}
-            </a>
-          </div>
-
-          {/* Proof strip */}
-          <dl className="mt-12 flex flex-wrap gap-8 border-t border-ink-800 pt-8">
-            {(isEN
-              ? [['90s', 'per lead'], ['0', 'apps to install'], ['1 week', 'to go live']]
-              : [['90s', 'per lead'], ['0', 'app da installare'], ['1 sett.', 'per partire']]
-            ).map(([val, label]) => (
-              <div key={`${val}-${label}`}>
-                <dt className="sr-only">{label}</dt>
-                <dd className="font-heading">
-                  <span className="block text-3xl font-black text-signal-400">{val}</span>
-                  <span className="mt-1 block text-[11px] font-bold uppercase tracking-widest text-ink-600">
-                    {label}
-                  </span>
-                </dd>
+        {/* Orbital 3D carousel */}
+        <div
+          className="orbital-scene mx-auto mt-14 w-full"
+          style={{ height: '280px', maxWidth: '640px' }}
+          aria-hidden="true"
+        >
+          <div className="orbital-ring">
+            {orbitalCards.map((card, i) => (
+              <div
+                key={i}
+                className="orbital-card-wrap"
+                style={{ transform: `rotateY(${i * 90}deg) translateZ(220px)` }}
+              >
+                {card}
               </div>
             ))}
-          </dl>
+          </div>
         </div>
+      </div>
 
-        {/* Right: rotating badge */}
-        <div className="flex shrink-0 items-center justify-start lg:justify-end">
-          <RotatingBadge isEN={isEN} />
-        </div>
-      </Container>
-
-      {/* Bottom accent */}
+      {/* Horizon fade */}
       <div
         aria-hidden="true"
-        className="absolute inset-x-0 bottom-0 h-px"
-        style={{ background: 'linear-gradient(90deg, transparent, rgba(242,183,5,0.35), transparent)' }}
+        className="pointer-events-none absolute inset-x-0 bottom-0 h-24"
+        style={{ background: 'linear-gradient(transparent, rgba(240,248,255,0.25))' }}
       />
     </section>
   )

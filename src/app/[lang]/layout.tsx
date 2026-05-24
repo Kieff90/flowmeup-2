@@ -19,7 +19,7 @@ export default async function LangLayout({
 
   return (
     <html lang={lang}>
-      <body className="font-sans antialiased bg-ink-100 text-ink-900">
+      <body className="font-sans antialiased bg-white text-[#0a1628]">
         {children}
       </body>
     </html>
