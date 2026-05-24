@@ -33,7 +33,7 @@ export function AgentCard({ name, tagline, trigger, description, Icon, className
           <div className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-sky-50">
             <Icon size={20} className="text-sky-600" aria-hidden="true" />
           </div>
-          <p className="font-heading text-xl font-black text-[#0a1628]">{name}</p>
+          <p className="font-heading text-xl font-black text-sky-950">{name}</p>
         </div>
         <ChevronDown
           size={20}
@@ -44,9 +44,9 @@ export function AgentCard({ name, tagline, trigger, description, Icon, className
 
       {open && (
         <div className="border-t border-gray-100 px-6 pb-6 pt-4">
-          <p className="text-base font-semibold leading-relaxed text-[#0a1628]/60">{tagline}</p>
-          <p className="mt-4 font-heading text-base font-black text-[#0a1628]">{trigger}</p>
-          <p className="mt-2 text-base leading-relaxed text-gray-500">{description}</p>
+          <p className="text-base font-semibold leading-relaxed text-sky-950/60">{tagline}</p>
+          <p className="mt-4 font-heading text-base font-black text-sky-950">{trigger}</p>
+          <p className="mt-2 text-base leading-relaxed text-sky-800/70">{description}</p>
         </div>
       )}
     </div>

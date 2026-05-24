@@ -25,7 +25,7 @@ export function Solution({ dict }: SolutionProps) {
   ]
 
   return (
-    <section aria-labelledby="solution-heading" className="bg-[#dff4ff] py-14 md:py-20 lg:py-24">
+    <section aria-labelledby="solution-heading" className="bg-sky-50 py-14 md:py-20 lg:py-24">
       <Container>
         <div className="grid gap-10 lg:grid-cols-[1fr_0.8fr] lg:items-end">
           <div>

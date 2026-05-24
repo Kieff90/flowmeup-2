@@ -14,7 +14,7 @@ const WAVE_BARS = [3, 6, 10, 7, 13, 9, 5, 11, 7, 4, 9, 6]
 
 function CardNotaLead({ isEN }: { isEN: boolean }) {
   return (
-    <div className="flex h-full w-full flex-col justify-between rounded-2xl bg-[#0f172a] p-3.5 shadow-2xl">
+    <div className="flex h-full w-full flex-col justify-between rounded-2xl bg-sky-950 p-3.5 shadow-2xl">
       <div className="flex items-end gap-[2px]" style={{ height: '28px' }}>
         {WAVE_BARS.map((h, i) => (
           <div
@@ -42,18 +42,18 @@ function CardCercaProspect({ isEN }: { isEN: boolean }) {
     <div className="flex h-full w-full flex-col justify-between rounded-2xl bg-white p-3.5 shadow-2xl">
       <div className="flex flex-wrap gap-1">
         {tags.map((tag) => (
-          <span key={tag} className="rounded-full bg-gray-100 px-1.5 py-px text-[8px] font-bold text-gray-500">
+          <span key={tag} className="rounded-full bg-sky-100 px-1.5 py-px text-[8px] font-bold text-sky-700">
             {tag}
           </span>
         ))}
       </div>
       <div>
-        <p className="font-heading text-3xl font-black leading-none text-[#0a1628]">47</p>
-        <p className="font-heading text-[10px] font-black text-[#0a1628]">
+        <p className="font-heading text-3xl font-black leading-none text-sky-950">47</p>
+        <p className="font-heading text-[10px] font-black text-sky-950">
           {isEN ? 'prospects' : 'prospect'}
         </p>
       </div>
-      <p className="text-[9px] font-semibold text-gray-400">
+      <p className="text-[9px] font-semibold text-sky-700/60">
         {isEN ? 'found in 28 min' : 'trovati in 28 min'}
       </p>
     </div>
@@ -63,23 +63,23 @@ function CardCercaProspect({ isEN }: { isEN: boolean }) {
 function CardBriefCliente({ isEN }: { isEN: boolean }) {
   return (
     <div className="flex h-full w-full flex-col gap-1.5 rounded-2xl bg-white p-3.5 shadow-2xl">
-      <p className="font-heading text-[10px] font-black text-[#0a1628]">
+      <p className="font-heading text-[10px] font-black text-sky-950">
         {isEN ? 'Client Brief' : 'Brief Cliente'}
       </p>
-      <p className="text-[10px] font-bold text-gray-700">Rossi Impianti</p>
+      <p className="text-[10px] font-bold text-sky-800">Rossi Impianti</p>
       <div className="flex flex-col gap-0.5">
-        <p className="text-[8px] text-gray-400">
+        <p className="text-[8px] text-sky-700/60">
           {isEN ? 'Last contact: ' : 'Ultimo contatto: '}
-          <span className="font-bold text-gray-600">{isEN ? '3d ago' : '3 gg fa'}</span>
+          <span className="font-bold text-sky-700">{isEN ? '3d ago' : '3 gg fa'}</span>
         </p>
-        <p className="text-[8px] text-gray-400">
+        <p className="text-[8px] text-sky-700/60">
           {isEN ? 'Open deal: ' : 'Offerta aperta: '}
-          <span className="font-bold text-gray-600">€12.400</span>
+          <span className="font-bold text-sky-700">€12.400</span>
         </p>
       </div>
       <div className="mt-auto flex items-center gap-1">
-        <div className="size-1.5 rounded-full bg-green-400" />
-        <p className="text-[8px] font-bold text-gray-600">
+        <div className="size-1.5 rounded-full bg-lime-400" />
+        <p className="text-[8px] font-bold text-sky-700">
           {isEN ? 'In negotiation' : 'In trattativa'}
         </p>
       </div>
@@ -95,17 +95,17 @@ const RADAR_LEADS = [
 
 function CardRadarCommerciale({ isEN }: { isEN: boolean }) {
   return (
-    <div className="flex h-full w-full flex-col gap-2 rounded-2xl bg-[#CCFF4E] p-3.5 shadow-2xl">
-      <p className="font-heading text-[10px] font-black text-[#0a1628]">
+    <div className="flex h-full w-full flex-col gap-2 rounded-2xl bg-lime-300 p-3.5 shadow-2xl">
+      <p className="font-heading text-[10px] font-black text-sky-950">
         {isEN ? 'Sales Radar' : 'Radar Commerciale'}
       </p>
       {RADAR_LEADS.map(({ name, days, color }) => (
         <div key={name} className="flex items-center justify-between">
           <div className="flex items-center gap-1.5">
             <div className={`size-1.5 rounded-full ${color}`} />
-            <p className="text-[9px] font-bold text-[#0a1628]">{name}</p>
+            <p className="text-[9px] font-bold text-sky-950">{name}</p>
           </div>
-          <p className="text-[9px] font-semibold text-[#0a1628]/60">
+          <p className="text-[9px] font-semibold text-sky-950/60">
             {days}{isEN ? 'd' : 'gg'}
           </p>
         </div>
@@ -179,12 +179,12 @@ export function Hero({ dict }: HeroProps) {
         <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
           <a
             href="#contact"
-            className="inline-flex items-center gap-2.5 rounded-full bg-[#CCFF4E] px-7 py-3.5 font-heading text-sm font-black uppercase tracking-widest text-[#0a1628] transition-transform hover:scale-105 active:scale-95"
+            className="inline-flex items-center gap-2.5 rounded-full bg-lime-300 px-7 py-3.5 font-heading text-sm font-black uppercase tracking-widest text-sky-950 transition-transform hover:scale-105 active:scale-95"
           >
             {ctaLabel}
-            <span className="inline-flex size-5 items-center justify-center rounded-full bg-[#0a1628]">
+            <span className="inline-flex size-5 items-center justify-center rounded-full bg-sky-950">
               <svg viewBox="0 0 10 10" className="size-3" fill="none">
-                <path d="M2 8L8 2M8 2H4M8 2V6" stroke="#CCFF4E" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                <path d="M2 8L8 2M8 2H4M8 2V6" stroke="#bef264" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </span>
           </a>
