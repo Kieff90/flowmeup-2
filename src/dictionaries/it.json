@@ -3,6 +3,7 @@
     "cta": "Parliamo del tuo processo"
   },
   "hero": {
+    "kicker": "Per commerciali in campo",
     "headline": "Il tuo commerciale registra un lead in 90 secondi. Dal telefono. Mentre guida.",
     "subheadline": "Per i titolari che hanno commerciali in campo: i lead vengono persi non perché il tuo team non lavora, ma perché aprire un foglio Excel dalla macchina, tra un appuntamento e l'altro, non lo fa nessuno. Flowmeup risolve questo. Nessuna app da installare. Nessuna abitudine da cambiare.",
     "cta": "Parliamo del tuo processo"
@@ -15,6 +16,14 @@
   "solution": {
     "headline": "Agenti configurati sul tuo processo. Parlano con il tuo team. Salvano dove salvi già tu.",
     "body": "Il commerciale manda un messaggio vocale su WhatsApp. Il lead è salvato. Nessuna app da scaricare, nessun corso, nessun cambio di workflow. Gli agenti lavorano dove lavora già il tuo team: su WhatsApp, su Excel, sui fogli che usi da anni. Flowmeup configura tutto. Il tuo team comincia a usarli nel giro di una settimana."
+  },
+  "agents": {
+    "headline": "Quattro agenti, un processo commerciale alla volta.",
+    "subheadline": "Si parte dagli agenti già attivi. Gli altri si aggiungono quando il team ha preso ritmo, senza cambiare strumenti."
+  },
+  "differentiator": {
+    "headline": "Quello che registra il commerciale oggi, il titolare lo vede stasera.",
+    "body": "Tutti gli agenti lavorano dalla stessa memoria aziendale. Quando un commerciale registra Bianchi Costruzioni con Voice Lead, la sera puoi chiedere cosa sappiamo di Bianchi e avere il quadro completo. Niente re-briefing, niente copia-incolla, niente fogli paralleli."
   },
   "delivery": {
     "headline": "Raccontaci il tuo processo. Noi configuriamo. Sei operativo entro una settimana.",
@@ -43,6 +52,6 @@
     "error": "Si è verificato un errore. Riprova tra qualche istante."
   },
   "footer": {
-    "copyright": "© 2025 Flowmeup. Tutti i diritti riservati."
+    "copyright": "© 2026 Flowmeup. Tutti i diritti riservati."
   }
 }

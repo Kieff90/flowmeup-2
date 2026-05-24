@@ -71,31 +71,33 @@ export function Delivery({ dict }: DeliveryProps) {
   const steps = isEN ? stepsEN : stepsIT
 
   return (
-    <section aria-labelledby="delivery-heading" className="bg-slate-100 py-12 md:py-16 lg:py-20">
+    <section aria-labelledby="delivery-heading" className="industrial-grid bg-ink-200 py-12 md:py-16 lg:py-20">
       <Container>
-        <h2 id="delivery-heading" className="reveal text-3xl md:text-4xl font-bold text-slate-800 leading-[1.2]">
+        <p className="mb-4 font-heading text-sm font-black text-ink-600">
+          {isEN ? 'HOW IT GOES LIVE' : 'COME SI VA LIVE'}
+        </p>
+        <h2 id="delivery-heading" className="font-heading text-3xl font-black leading-[1.02] text-ink-950 md:text-5xl">
           {headline}
         </h2>
-        <p className="text-base lg:text-lg text-slate-600 mt-3 mb-10">
+        <p className="mt-4 max-w-2xl text-lg font-medium leading-relaxed text-ink-700">
           {subheadline}
         </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mt-8">
+        <div className="mt-10 grid grid-cols-1 gap-4 md:grid-cols-4">
           {steps.map((step) => (
-            <div key={step.number} className="reveal flex flex-col items-start gap-3">
-              {/* Step number circle */}
-              <div className="flex items-center justify-center w-10 h-10 rounded-full bg-navy-900 text-white font-bold text-base flex-shrink-0">
+            <div key={step.number} className="border-2 border-ink-900 bg-ink-50 p-5">
+              <div className="mb-5 flex h-11 w-11 items-center justify-center bg-ink-950 font-heading text-lg font-black text-signal-300">
                 {step.number}
               </div>
 
               <div>
-                <h3 className="text-base font-bold text-slate-800 leading-snug">
+                <h3 className="font-heading text-xl font-black leading-snug text-ink-950">
                   {step.title}
                 </h3>
-                <p className="text-sm text-slate-600 mt-1 leading-relaxed">
+                <p className="mt-2 text-base leading-relaxed text-ink-700">
                   {step.description}
                   {step.emphasisWord && (
-                    <strong className="font-bold text-slate-800">{step.emphasisWord}</strong>
+                    <strong className="font-black text-ink-950">{step.emphasisWord}</strong>
                   )}
                 </p>
               </div>

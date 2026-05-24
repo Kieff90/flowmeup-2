@@ -10,7 +10,33 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // Primary — Deep Navy
+        // Industrial rebuild palette — cream paper, graphite ink, signal yellow
+        ink: {
+          50: '#FFF8EA',
+          100: '#F3E7D3',
+          200: '#E6D7BE',
+          300: '#D2C1A3',
+          400: '#B7A284',
+          500: '#9B8C73',
+          600: '#766B5D',
+          700: '#4E4639',
+          800: '#2B2418',
+          900: '#17130C',
+          950: '#0D0A06',
+        },
+        signal: {
+          50: '#FFF7CC',
+          100: '#FFE88A',
+          200: '#FFD84D',
+          300: '#FFC51A',
+          400: '#F2B705',
+          500: '#D99A00',
+          600: '#A86F00',
+          700: '#744B00',
+          800: '#4D3000',
+          900: '#2D1C00',
+        },
+        // Legacy tokens kept while components migrate.
         navy: {
           50:  '#EFF6FF',
           100: '#DBEAFE',
@@ -39,16 +65,16 @@ const config: Config = {
         },
         // Semantic aliases
         brand: {
-          primary:        '#0F2349',  // navy-900
-          'primary-dark': '#071730',  // navy-950
-          accent:         '#F59E0B',  // amber-500
-          'accent-hover': '#D97706',  // amber-600
+          primary:        '#17130C',
+          'primary-dark': '#0D0A06',
+          accent:         '#F2B705',
+          'accent-hover': '#D99A00',
         },
         badge: {
-          live:               '#22C55E',  // green-500
-          'live-text':        '#FFFFFF',
-          'coming-soon':      '#CBD5E1',  // slate-300
-          'coming-soon-text': '#475569',  // slate-600
+          live:               '#22C55E',
+          'live-text':        '#07130A',
+          'coming-soon':      '#D2C1A3',
+          'coming-soon-text': '#4E4639',
         },
         status: {
           error:   '#EF4444',
@@ -57,8 +83,8 @@ const config: Config = {
         },
       },
       fontFamily: {
-        sans: ['Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'sans-serif'],
-        heading: ['Inter', 'system-ui', 'sans-serif'],
+        sans: ['Source Sans 3', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'sans-serif'],
+        heading: ['Archivo', 'Source Sans 3', 'system-ui', 'sans-serif'],
       },
       fontSize: {
         // Base Tailwind scale, explicitly declared for clarity

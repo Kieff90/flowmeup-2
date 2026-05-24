@@ -49,28 +49,46 @@ export function ContactForm({ dict, lang }: ContactFormProps) {
   }
 
   const inputClass =
-    'w-full rounded-lg border border-slate-300 bg-white px-4 py-3 text-base text-slate-900 placeholder-slate-400 ' +
-    'focus:outline-none focus:border-amber-500 focus:ring-3 focus:ring-amber-500/15 transition-colors duration-200'
+    'w-full border-2 border-ink-700 bg-ink-50 px-4 py-3 text-base text-ink-950 placeholder-ink-500 ' +
+    'focus:outline-none focus:border-signal-400 focus:ring-3 focus:ring-signal-400/25 transition-colors duration-200'
 
-  const labelClass = 'block text-sm font-semibold text-slate-300 mb-1'
+  const labelClass = 'block text-sm font-heading font-black text-ink-200 mb-1'
 
   return (
-    <section id="contact" aria-labelledby="contact-heading" className="bg-navy-900 py-12 md:py-16 lg:py-20">
+    <section id="contact" aria-labelledby="contact-heading" className="bg-ink-950 py-12 md:py-16 lg:py-20">
       <Container>
-        <h2 id="contact-heading" className="reveal text-2xl md:text-3xl font-bold text-white leading-[1.2]">
-          {headline}
-        </h2>
-        {subheadline && (
-          <p className="text-base lg:text-lg text-navy-300 mt-3 mb-10 max-w-2xl">
-            {subheadline}
-          </p>
-        )}
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mt-8">
-          {/* Form */}
+        <div className="grid grid-cols-1 gap-10 md:grid-cols-[0.85fr_1.15fr]">
           <div>
+            <p className="mb-4 font-heading text-sm font-black text-signal-300">
+              {isEN ? 'NEXT STEP' : 'PROSSIMO PASSO'}
+            </p>
+            <h2 id="contact-heading" className="font-heading text-3xl font-black leading-[1.02] text-ink-50 md:text-5xl">
+              {headline}
+            </h2>
+            {subheadline && (
+              <p className="mt-5 max-w-xl text-lg font-medium leading-relaxed text-ink-200">
+                {subheadline}
+              </p>
+            )}
+
+            <div className="mt-8 border-l-4 border-signal-400 pl-5">
+              <p className="text-ink-200 text-base mb-3">
+                {isEN ? 'Prefer to pick a time straight away?' : 'Preferisci scegliere subito un orario?'}
+              </p>
+              <a
+                href="#"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-heading text-base font-black text-signal-300 underline underline-offset-4 hover:text-signal-100 transition-colors focus-visible:outline focus-visible:outline-[3px] focus-visible:outline-signal-300 focus-visible:outline-offset-2"
+              >
+                {calendarText}
+              </a>
+            </div>
+          </div>
+
+          <div className="border-2 border-ink-50/30 bg-ink-900 p-5 md:p-7">
             {status === 'success' ? (
-              <div role="status" aria-live="polite" className="text-white text-lg leading-relaxed py-8">
+              <div role="status" aria-live="polite" className="text-ink-50 text-lg leading-relaxed py-8">
                 {successMsg}
               </div>
             ) : (
@@ -144,7 +162,7 @@ export function ContactForm({ dict, lang }: ContactFormProps) {
                 </div>
 
                 {status === 'error' && (
-                  <div role="alert" className="text-red-300 text-sm">
+                  <div role="alert" className="text-orange-300 text-sm">
                     {errorText || errorMsg}
                   </div>
                 )}
@@ -160,22 +178,6 @@ export function ContactForm({ dict, lang }: ContactFormProps) {
                 </Button>
               </form>
             )}
-          </div>
-
-          {/* Calendar link */}
-          <div className="flex flex-col justify-center">
-            <p className="text-navy-300 text-base mb-4">
-              {isEN ? 'Prefer to pick a time straight away?' : 'Preferisci scegliere subito un orario?'}
-            </p>
-            {/* TODO: Replace # with Calendly URL */}
-            <a
-              href="#"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-amber-400 underline underline-offset-4 hover:text-amber-300 transition-colors text-base font-medium focus-visible:outline focus-visible:outline-[3px] focus-visible:outline-amber-400 focus-visible:outline-offset-2 rounded-sm"
-            >
-              {calendarText}
-            </a>
           </div>
         </div>
       </Container>

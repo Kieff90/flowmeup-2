@@ -11,28 +11,38 @@ export function Problem({ dict }: ProblemProps) {
   const headline = problem?.headline ?? ''
   const para1 = problem?.para1 ?? ''
   const para2 = problem?.para2 ?? ''
+  const isEN = headline.startsWith('Every')
 
   const headingRef = useScrollReveal<HTMLHeadingElement>()
   const bodyRef = useScrollReveal<HTMLDivElement>()
 
   return (
-    <section aria-labelledby="problem-heading" className="bg-slate-50 py-12 md:py-16 lg:py-20">
+    <section aria-labelledby="problem-heading" className="industrial-grid bg-ink-100 py-12 md:py-16 lg:py-20">
       <Container>
-        <div className="max-w-2xl">
+        <div className="grid gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
+          <div>
+            <p className="mb-4 font-heading text-sm font-black text-ink-600">
+              {isEN ? 'THE REAL LEAK' : 'LA PERDITA REALE'}
+            </p>
           <h2
             id="problem-heading"
             ref={headingRef}
-            className="reveal text-2xl md:text-3xl font-bold text-slate-800 leading-[1.2] mb-8"
+              className="reveal font-heading text-3xl font-black leading-[1.02] text-ink-950 md:text-5xl"
           >
             {headline}
           </h2>
+          </div>
 
-          <div ref={bodyRef} className="reveal" style={{ transitionDelay: '150ms' }}>
-            <p className="text-[17px] lg:text-lg text-slate-700 leading-relaxed mb-6">
+          <div
+            ref={bodyRef}
+            className="reveal border-l-4 border-ink-950 bg-ink-50 px-5 py-6 md:px-8"
+            style={{ transitionDelay: '150ms' }}
+          >
+            <p className="text-[18px] font-medium leading-relaxed text-ink-800 lg:text-xl">
               {para1}
             </p>
 
-            <p className="text-[17px] lg:text-lg text-slate-700 leading-relaxed">
+            <p className="mt-6 text-[18px] font-semibold leading-relaxed text-ink-950 lg:text-xl">
               {para2}
             </p>
           </div>
