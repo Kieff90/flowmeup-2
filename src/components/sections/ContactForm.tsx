@@ -83,11 +83,11 @@ export function ContactForm({ dict, lang }: ContactFormProps) {
                 href="https://cal.eu/agent-flowmeup/30min"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-full bg-lime-300 px-6 py-3 font-heading text-sm font-black uppercase tracking-widest text-[#0a1628] transition-transform hover:scale-105 active:scale-95"
+                className="inline-flex items-center gap-2 rounded-full bg-lime-300 px-6 py-3 font-heading text-sm font-black uppercase tracking-widest text-sky-950 transition-transform hover:scale-105 active:scale-95"
               >
                 {isEN ? 'Pick a time' : 'Scegli un orario'}
                 <svg viewBox="0 0 10 10" className="size-3.5" fill="none">
-                  <path d="M2 8L8 2M8 2H4M8 2V6" stroke="#0a1628" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                  <path d="M2 8L8 2M8 2H4M8 2V6" stroke="#082f49" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
               </a>
             </div>

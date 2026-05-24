@@ -15,20 +15,20 @@ export function LanguageSwitcher({ currentLang }: LanguageSwitcherProps) {
         aria-current={currentLang === 'it' ? 'page' : undefined}
         className={
           currentLang === 'it'
-            ? 'text-signal-300 font-bold underline underline-offset-4'
-            : 'text-ink-300 hover:text-ink-50 transition-colors'
+            ? 'text-lime-300 font-bold underline underline-offset-4'
+            : 'text-sky-300 hover:text-white transition-colors'
         }
       >
         IT
       </Link>
-      <span className="text-ink-500" aria-hidden="true">|</span>
+      <span className="text-sky-500" aria-hidden="true">|</span>
       <Link
         href="/en"
         aria-current={currentLang === 'en' ? 'page' : undefined}
         className={
           currentLang === 'en'
-            ? 'text-signal-300 font-bold underline underline-offset-4'
-            : 'text-ink-300 hover:text-ink-50 transition-colors'
+            ? 'text-lime-300 font-bold underline underline-offset-4'
+            : 'text-sky-300 hover:text-white transition-colors'
         }
       >
         EN

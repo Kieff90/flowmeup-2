@@ -26,7 +26,7 @@ export function Navbar({ dict, lang }: NavbarProps) {
         <nav aria-label="Main navigation" className="flex h-16 items-center justify-between gap-6">
           <a
             href={`/${lang}`}
-            className="font-heading text-xl font-black tracking-tight text-[#0a1628]"
+            className="font-heading text-xl font-black tracking-tight text-sky-950"
           >
             Flowmeup
           </a>
@@ -36,7 +36,7 @@ export function Navbar({ dict, lang }: NavbarProps) {
               <li key={item.label}>
                 <a
                   href={item.href}
-                  className="font-heading text-[11px] font-black uppercase tracking-[0.14em] text-[#0a1628]/60 transition-colors hover:text-[#0a1628]"
+                  className="font-heading text-[11px] font-black uppercase tracking-[0.14em] text-sky-950/60 transition-colors hover:text-sky-950"
                 >
                   {item.label}
                 </a>
@@ -46,23 +46,23 @@ export function Navbar({ dict, lang }: NavbarProps) {
 
           <div className="flex items-center gap-4">
             <div className="hidden items-center gap-1.5 md:flex" aria-label="Language switcher">
-              <Globe size={13} className="text-[#0a1628]/40" aria-hidden="true" />
+              <Globe size={13} className="text-sky-950/40" aria-hidden="true" />
               <a
                 href="/it"
                 className={[
                   'font-heading text-[11px] font-black transition-colors',
-                  lang === 'it' ? 'text-[#0a1628]' : 'text-[#0a1628]/35 hover:text-[#0a1628]',
+                  lang === 'it' ? 'text-sky-950' : 'text-sky-950/35 hover:text-sky-950',
                 ].join(' ')}
                 aria-current={lang === 'it' ? 'true' : undefined}
               >
                 IT
               </a>
-              <span className="text-[#0a1628]/20" aria-hidden="true">/</span>
+              <span className="text-sky-950/20" aria-hidden="true">/</span>
               <a
                 href="/en"
                 className={[
                   'font-heading text-[11px] font-black transition-colors',
-                  lang === 'en' ? 'text-[#0a1628]' : 'text-[#0a1628]/35 hover:text-[#0a1628]',
+                  lang === 'en' ? 'text-sky-950' : 'text-sky-950/35 hover:text-sky-950',
                 ].join(' ')}
                 aria-current={lang === 'en' ? 'true' : undefined}
               >
@@ -72,7 +72,7 @@ export function Navbar({ dict, lang }: NavbarProps) {
 
             <a
               href="#contact"
-              className="inline-flex items-center rounded-full bg-[#CCFF4E] px-5 py-2 font-heading text-[11px] font-black uppercase tracking-[0.14em] text-[#0a1628] transition-transform hover:scale-105 active:scale-95"
+              className="inline-flex items-center rounded-full bg-lime-300 px-5 py-2 font-heading text-[11px] font-black uppercase tracking-[0.14em] text-sky-950 transition-transform hover:scale-105 active:scale-95"
             >
               {ctaText}
             </a>

@@ -95,7 +95,7 @@ export function Delivery({ dict }: DeliveryProps) {
                 <p className="mt-2 text-base leading-relaxed text-sky-900/70">
                   {step.description}
                   {step.emphasisWord && (
-                    <strong className="font-black text-ink-950">{step.emphasisWord}</strong>
+                    <strong className="font-black text-sky-950">{step.emphasisWord}</strong>
                   )}
                 </p>
               </div>

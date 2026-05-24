@@ -17,10 +17,10 @@ type ButtonProps = BaseProps &
 
 const variantClasses: Record<Variant, string> = {
   primary: [
-    'bg-signal-400 text-ink-950',
-    'hover:bg-signal-500 hover:-translate-y-px',
-    'active:bg-signal-600 active:translate-y-0',
-    'focus-visible:outline focus-visible:outline-[3px] focus-visible:outline-signal-300 focus-visible:outline-offset-2',
+    'bg-lime-300 text-sky-950',
+    'hover:bg-lime-400 hover:-translate-y-px',
+    'active:bg-lime-500 active:translate-y-0',
+    'focus-visible:outline focus-visible:outline-[3px] focus-visible:outline-lime-300 focus-visible:outline-offset-2',
     'transition-[background-color,transform] duration-[200ms,150ms] ease',
     'font-heading font-black text-base uppercase tracking-[0.12em]',
     'px-7 py-3.5 rounded-full',
@@ -29,16 +29,16 @@ const variantClasses: Record<Variant, string> = {
   secondary: [
     'bg-transparent text-sky-950 border border-sky-950/20',
     'hover:bg-sky-950 hover:text-white',
-    'focus-visible:outline focus-visible:outline-[3px] focus-visible:outline-signal-300 focus-visible:outline-offset-2',
+    'focus-visible:outline focus-visible:outline-[3px] focus-visible:outline-lime-300 focus-visible:outline-offset-2',
     'transition-all duration-200 ease',
     'font-heading font-bold text-base uppercase tracking-[0.12em]',
     'px-6 py-3 rounded-full',
     'inline-flex items-center gap-2 cursor-pointer',
   ].join(' '),
   'secondary-on-dark': [
-    'bg-transparent text-ink-50 border border-ink-50/45',
-    'hover:bg-ink-50/10',
-    'focus-visible:outline focus-visible:outline-[3px] focus-visible:outline-signal-300 focus-visible:outline-offset-2',
+    'bg-transparent text-white border border-white/45',
+    'hover:bg-white/10',
+    'focus-visible:outline focus-visible:outline-[3px] focus-visible:outline-lime-300 focus-visible:outline-offset-2',
     'transition-all duration-200 ease',
     'font-heading font-bold text-base uppercase tracking-[0.12em]',
     'px-6 py-3 rounded-full',

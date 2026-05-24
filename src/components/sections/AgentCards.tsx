@@ -90,17 +90,17 @@ export function AgentCards({ lang = 'it', dict }: AgentCardsProps) {
   const subheadline = agentsDict?.subheadline ?? (lang === 'en' ? 'Activate one at a time. Or all together.'       : 'Attivali uno alla volta. O tutti insieme.')
 
   return (
-    <section id="agents" aria-labelledby="agents-heading" className="bg-gray-50 py-16 md:py-20 lg:py-24">
+    <section id="agents" aria-labelledby="agents-heading" className="bg-sky-50 py-16 md:py-20 lg:py-24">
       <Container>
         <div className="mb-10 max-w-2xl">
           <h2
             id="agents-heading"
             ref={headingRef}
-            className="reveal font-heading text-3xl font-black leading-[1.02] text-[#0a1628] md:text-5xl"
+            className="reveal font-heading text-3xl font-black leading-[1.02] text-sky-950 md:text-5xl"
           >
             {headline}
           </h2>
-          <p className="mt-4 text-lg font-medium leading-relaxed text-[#0a1628]/60">
+          <p className="mt-4 text-lg font-medium leading-relaxed text-sky-950/60">
             {subheadline}
           </p>
         </div>
@@ -116,10 +116,10 @@ export function AgentCards({ lang = 'it', dict }: AgentCardsProps) {
             <span className="text-base leading-none">✦</span>
           </div>
           <div>
-            <p className="font-heading text-base font-black text-[#0a1628]">
+            <p className="font-heading text-base font-black text-sky-950">
               {lang === 'en' ? 'Need something specific?' : 'Hai un\'esigenza specifica?'}
             </p>
-            <p className="mt-1 text-sm leading-relaxed text-[#0a1628]/60">
+            <p className="mt-1 text-sm leading-relaxed text-sky-950/60">
               {lang === 'en'
                 ? 'We also build custom agents tailored to your sales process. Contact us to find out how.'
                 : 'Costruiamo anche agenti custom su misura per il tuo processo. Scrivici per scoprire come.'}
