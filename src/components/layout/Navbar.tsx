@@ -45,8 +45,8 @@ export function Navbar({ dict, lang }: NavbarProps) {
           </ul>
 
           <div className="flex items-center gap-4">
-            <div className="hidden items-center gap-1.5 md:flex" aria-label="Language switcher">
-              <Globe size={13} className="text-sky-950/40" aria-hidden="true" />
+            <div className="flex items-center gap-1.5" aria-label="Language switcher">
+              <Globe size={13} className="hidden text-sky-950/40 md:block" aria-hidden="true" />
               <a
                 href="/it"
                 className={[
