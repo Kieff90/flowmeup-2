@@ -1,5 +1,5 @@
 'use client'
-import { MessageCircle, FileSpreadsheet, Calendar } from 'lucide-react'
+import { FileSpreadsheet, MessageCircle, Send, Database, Wrench } from 'lucide-react'
 import { Container } from '@/components/ui/Container'
 import { useScrollReveal } from '@/hooks/useScrollReveal'
 
@@ -7,46 +7,55 @@ interface SolutionProps {
   dict: Record<string, unknown>
 }
 
-const icons = [
-  { Icon: MessageCircle, label: 'WhatsApp' },
-  { Icon: FileSpreadsheet, label: 'Excel' },
-  { Icon: Calendar, label: 'Calendar' },
-]
-
 export function Solution({ dict }: SolutionProps) {
   const solution = dict.solution as Record<string, string> | undefined
   const headline = solution?.headline ?? ''
   const body = solution?.body ?? ''
+  const isEN = headline.startsWith('Pick')
 
   const headingRef = useScrollReveal<HTMLHeadingElement>()
   const bodyRef = useScrollReveal<HTMLDivElement>()
 
+  const platformIcons = [
+    { Icon: MessageCircle, label: 'WhatsApp' },
+    { Icon: Send,          label: 'Telegram' },
+    { Icon: FileSpreadsheet, label: 'Excel' },
+    { Icon: Database,      label: 'CRM' },
+    { Icon: Wrench,        label: isEN ? 'Done for you' : 'Configurato per te' },
+  ]
+
   return (
-    <section aria-labelledby="solution-heading" className="bg-slate-100 py-12 md:py-16 lg:py-20">
+    <section aria-labelledby="solution-heading" className="bg-[#dff4ff] py-14 md:py-20 lg:py-24">
       <Container>
-        <div className="max-w-2xl">
+        <div className="grid gap-10 lg:grid-cols-[1fr_0.8fr] lg:items-end">
+          <div>
+            <p className="mb-4 font-heading text-[11px] font-black uppercase tracking-[0.18em] text-sky-700/70">
+              {isEN ? 'WHAT CHANGES' : 'COSA CAMBIA'}
+            </p>
           <h2
             id="solution-heading"
             ref={headingRef}
-            className="reveal text-2xl md:text-3xl font-bold text-slate-800 leading-[1.2] mb-6"
+              className="reveal font-heading text-4xl font-black leading-[1] text-sky-950 md:text-6xl"
           >
             {headline}
           </h2>
 
-          <div ref={bodyRef} className="reveal" style={{ transitionDelay: '150ms' }}>
-            <p className="text-[17px] lg:text-lg text-slate-700 leading-relaxed mb-8">
+            <p
+              ref={bodyRef}
+              className="reveal mt-6 max-w-3xl text-[18px] font-medium leading-relaxed text-sky-900/76 lg:text-xl"
+              style={{ transitionDelay: '150ms' }}
+            >
               {body}
             </p>
+          </div>
 
-            {/* Inline tool icons — lightweight, no images */}
-            <div className="flex items-center gap-6">
-              {icons.map(({ Icon, label }) => (
-                <div key={label} className="flex items-center gap-2 text-slate-600">
-                  <Icon size={20} className="text-amber-500" aria-hidden="true" />
-                  <span className="text-sm font-medium">{label}</span>
-                </div>
-              ))}
-            </div>
+          <div className="grid gap-3">
+            {platformIcons.map(({ Icon, label }) => (
+              <div key={label} className="flex items-center gap-3 rounded-full border border-white/70 bg-white/70 px-5 py-4 text-sky-950 shadow-[0_12px_35px_rgba(8,47,73,0.08)]">
+                <Icon size={22} className="text-sky-700" aria-hidden="true" />
+                <span className="font-heading text-base font-black">{label}</span>
+              </div>
+            ))}
           </div>
         </div>
       </Container>

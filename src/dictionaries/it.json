@@ -1,34 +1,50 @@
 {
   "navbar": {
-    "cta": "Parliamo del tuo processo"
+    "cta": "Parliamo",
+    "links": {
+      "about": "Chi siamo",
+      "agents": "Agenti",
+      "howItWorks": "Come funziona",
+      "contact": "Contatti"
+    }
   },
   "hero": {
-    "headline": "Il tuo commerciale registra un lead in 90 secondi. Dal telefono. Mentre guida.",
-    "subheadline": "Per i titolari che hanno commerciali in campo: i lead vengono persi non perché il tuo team non lavora, ma perché aprire un foglio Excel dalla macchina, tra un appuntamento e l'altro, non lo fa nessuno. Flowmeup risolve questo. Nessuna app da installare. Nessuna abitudine da cambiare.",
-    "cta": "Parliamo del tuo processo"
+    "eyebrow": "Agenti AI per il sales",
+    "headline": "Agenti AI per vendite più veloci",
+    "subheadline": "Una suite componibile per automatizzare ricerca, qualificazione, follow-up e operazioni sales.",
+    "cta": "Parliamo",
+    "ctaSecondary": "Scopri gli agenti"
   },
   "problem": {
-    "headline": "Ogni giorno i tuoi commerciali perdono ore ad aggiornare fogli e gestionali.",
-    "para1": "Finisce un appuntamento. Il commerciale è in macchina. Qualunque cosa usi per tenere i dati — foglio, gestionale, agenda — è sul computer in ufficio. \"Lo aggiorno stasera\" — ma stasera non succede. Il lead raffredda. Il titolare non sa nulla finché non chiede. E nel frattempo, il competitor ha già richiamato.",
-    "para2": "Questo non è un problema di volontà. È un problema di frizione: troppi passaggi tra il momento in cui succede qualcosa e il momento in cui viene registrato."
+    "headline": "Il tuo team lavora. I dati si perdono.",
+    "para1": "Ogni appuntamento genera informazioni. Quelle informazioni finiscono in WhatsApp, in testa, o non finiscono da nessuna parte. Lead che raffreddano. Follow-up che non arrivano. Titolari che non sanno cosa sta succedendo.",
+    "para2": "Non è colpa del team. È il processo che non regge."
   },
   "solution": {
-    "headline": "Agenti configurati sul tuo processo. Parlano con il tuo team. Salvano dove salvi già tu.",
-    "body": "Il commerciale manda un messaggio vocale su WhatsApp. Il lead è salvato. Nessuna app da scaricare, nessun corso, nessun cambio di workflow. Gli agenti lavorano dove lavora già il tuo team: su WhatsApp, su Excel, sui fogli che usi da anni. Flowmeup configura tutto. Il tuo team comincia a usarli nel giro di una settimana."
+    "headline": "Agenti che lavorano dove lavora già il tuo team.",
+    "body": "WhatsApp, Excel, le piattaforme che usi da anni. Niente da installare, niente da imparare. Flowmeup configura tutto sul tuo processo esistente."
+  },
+  "agents": {
+    "headline": "Quattro agenti. Un processo sales senza intoppi.",
+    "subheadline": "Attivali uno alla volta. O tutti insieme."
+  },
+  "differentiator": {
+    "headline": "Tutto quello che sa il team, lo sa anche Flowmeup.",
+    "body": "Gli agenti condividono la stessa memoria aziendale. Un lead registrato oggi è disponibile a tutto il team in tempo reale — che lo inserisca Marco dal telefono o Giulia dal CRM. Nessun re-briefing, nessun copia-incolla, nessun foglio parallelo."
   },
   "delivery": {
-    "headline": "Raccontaci il tuo processo. Noi configuriamo. Sei operativo entro una settimana.",
-    "subheadline": "Done-for-you. Il tuo team non installa nulla e non segue nessun corso. Flowmeup si occupa di tutto."
+    "headline": "Operativi entro una settimana.",
+    "subheadline": "Done-for-you. Raccontaci come lavora il tuo team. Noi configuriamo tutto."
   },
   "pricing": {
-    "headline": "Prezzi chiari. Paghi solo quello che usi.",
-    "setup": "Setup una tantum: €300 — include configurazione, integrazione con i tuoi dati, e onboarding del team.",
-    "noBind": "Poi paghi solo gli agenti che attivi, mese per mese. Nessun contratto annuale.",
+    "headline": "Prezzi chiari. Paghi quello che usi.",
+    "setup": "Setup €300 — configurazione, integrazione, onboarding inclusi.",
+    "noBind": "Poi solo gli agenti che attivi, mese per mese. Nessun contratto annuale.",
     "cta": "Scopri cosa ti serve"
   },
   "contact": {
-    "headline": "Parliamo del tuo processo.",
-    "subheadline": "Nessun demo preregistrato. Nessun trial self-service. Una chiamata di 30 minuti in cui capiamo come lavora il tuo team e se Flowmeup fa al caso tuo.",
+    "headline": "Parliamo.",
+    "subheadline": "30 minuti per capire se Flowmeup fa al caso tuo.",
     "fields": {
       "name": "Nome",
       "company": "Azienda",
@@ -37,12 +53,12 @@
       "message": "Messaggio",
       "messagePlaceholder": "Es. Abbiamo 4 commerciali in campo, usiamo Excel per i lead, WhatsApp per comunicare."
     },
-    "submit": "Inviami il tuo processo",
-    "calendarLink": "Oppure scegli direttamente un orario",
-    "success": "Ricevuto. Ti scriviamo entro 24 ore per confermare l'orario.",
-    "error": "Si è verificato un errore. Riprova tra qualche istante."
+    "submit": "Inviaci il tuo processo",
+    "calendarLink": "Oppure scegli un orario",
+    "success": "Ricevuto. Ti scriviamo entro 24 ore.",
+    "error": "Errore. Riprova tra qualche istante."
   },
   "footer": {
-    "copyright": "© 2025 Flowmeup. Tutti i diritti riservati."
+    "copyright": "© 2026 Flowmeup. Tutti i diritti riservati."
   }
 }

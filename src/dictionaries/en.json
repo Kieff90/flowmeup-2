@@ -1,56 +1,64 @@
 {
   "navbar": {
-    "cta": "Let's talk about your process"
+    "cta": "Let's talk",
+    "links": {
+      "about": "About",
+      "agents": "Agents",
+      "howItWorks": "How it works",
+      "contact": "Contact"
+    }
   },
   "hero": {
-    "headline": "Your sales rep logs a lead in 90 seconds. From their phone. While driving.",
-    "subheadline": "For business owners with field sales teams: leads don't go cold because your reps aren't working. They go cold because no one opens their records from the car between appointments. Flowmeup fixes that. Nothing to install. Nothing to change.",
-    "cta": "Let's talk about your process"
+    "eyebrow": "AI agents for sales",
+    "headline": "AI agents for faster sales",
+    "subheadline": "A composable suite to automate prospecting, qualification, follow-up and sales ops.",
+    "cta": "Let's talk",
+    "ctaSecondary": "View agents"
   },
   "problem": {
-    "headline": "Every day your salespeople lose hours updating spreadsheets and records. On a good day.",
-    "para1": "The meeting ends. The rep gets in the car. Whatever system they use to keep records — it's back at the desk. \"I'll update it tonight\" — but tonight it doesn't happen. The lead sits there. You find out two weeks later when someone asks about the account and nobody has notes.",
-    "para2": "This isn't a discipline problem. It's a friction problem: too many steps between when something happens in the field and when it gets recorded anywhere."
+    "headline": "Your team works. The data disappears.",
+    "para1": "Every meeting generates information. That information ends up in WhatsApp, in someone's head, or nowhere at all. Leads go cold. Follow-ups don't happen. Managers don't know what's going on.",
+    "para2": "It's not a people problem. It's a process problem."
   },
   "solution": {
-    "headline": "AI agents built around your process. They talk to your team. They save where you already save.",
-    "body": "Your rep sends a voice note on WhatsApp. The lead is saved. No app to download, no training session, no new workflow. The agents work where your team already works: WhatsApp, Excel, the spreadsheets you've used for years. Flowmeup sets everything up. Your team is running within a week."
+    "headline": "Agents that work where your team already works.",
+    "body": "WhatsApp, Excel, the platforms you've used for years. Nothing to install, nothing to learn. Flowmeup configures everything around your existing process."
   },
   "agents": {
-    "headline": "The Flowmeup agents",
-    "subheadline": "Live now or coming soon. Each one solves a specific sales process."
+    "headline": "Four agents. One sales process without friction.",
+    "subheadline": "Activate one at a time. Or all together."
   },
   "differentiator": {
-    "headline": "What your rep logs today, your manager sees tonight.",
-    "body": "All agents work from the same memory. When a rep logs Bianchi Construction through Voice Lead, you can ask \"what do we know about Bianchi?\" that evening and get the full picture. No re-briefing, no \"ask Marco what he knows,\" no copy-pasting between spreadsheets. The data goes in once and stays available to the whole team."
+    "headline": "What the team knows, Flowmeup knows.",
+    "body": "All agents share the same company memory. A lead logged today is available to the whole team in real time — whether Marco added it from his phone or Giulia from the CRM. No re-briefing, no copy-pasting, no parallel spreadsheets."
   },
   "delivery": {
-    "headline": "Tell us your process. We configure. You're live within a week.",
-    "subheadline": "Done for you. Your team installs nothing and attends no training. Flowmeup handles everything."
+    "headline": "Live within one week.",
+    "subheadline": "Done for you. Tell us how your team works. We configure everything."
   },
   "pricing": {
-    "headline": "Clear pricing. You pay only for what you use.",
-    "setup": "One-time setup fee: €300 — covers configuration, integration with your data store, and team onboarding.",
-    "noBind": "Then you pay only for the agents you activate, month by month. No annual contracts.",
+    "headline": "Clear pricing. Pay for what you use.",
+    "setup": "One-time setup €300 — configuration, integration, onboarding included.",
+    "noBind": "Then only the agents you activate, month by month. No annual contracts.",
     "cta": "Find out what you need"
   },
   "contact": {
-    "headline": "Let's talk about your process.",
-    "subheadline": "No pre-recorded demos. No self-serve trial. A 30-minute call where we understand how your team works and whether Flowmeup is the right fit.",
+    "headline": "Let's talk.",
+    "subheadline": "30 minutes to see if Flowmeup is the right fit for you.",
     "fields": {
       "name": "Name",
       "company": "Company",
       "role": "Role",
       "sector": "Sector",
       "message": "Message",
-      "messagePlaceholder": "E.g. We have 4 field reps, we use Excel for leads, WhatsApp for team communication."
+      "messagePlaceholder": "E.g. We have 4 field reps, we use Excel for leads, WhatsApp for communication."
     },
     "submit": "Send us your process",
     "calendarLink": "Or pick a time directly",
-    "success": "Got it. We'll write to you within 24 hours to confirm a time.",
+    "success": "Got it. We'll write to you within 24 hours.",
     "error": "An error occurred. Please try again."
   },
   "footer": {
-    "copyright": "© 2025 Flowmeup. All rights reserved."
+    "copyright": "© 2026 Flowmeup. All rights reserved."
   }
 }

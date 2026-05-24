@@ -1,11 +1,9 @@
 import { Container } from '@/components/ui/Container'
-import { Badge } from '@/components/ui/Badge'
 import { Button } from '@/components/ui/Button'
 
 interface AgentRow {
   name: string
   price: string
-  status: 'live' | 'coming-soon'
 }
 
 interface PricingProps {
@@ -14,17 +12,17 @@ interface PricingProps {
 }
 
 const agentsIT: AgentRow[] = [
-  { name: 'Voice Lead', price: '€59/mese', status: 'live' },
-  { name: 'Lead Scout', price: '€99/mese', status: 'live' },
-  { name: 'Pre-Call Brief', price: '€69/mese', status: 'coming-soon' },
-  { name: 'Follow-Up Radar', price: '€49/mese', status: 'coming-soon' },
+  { name: 'Cerca Prospect',    price: '€169/mese' },
+  { name: 'Nota Lead',         price: '€149/mese' },
+  { name: 'Brief Cliente',     price: '€129/mese' },
+  { name: 'Radar Commerciale', price: '€109/mese' },
 ]
 
 const agentsEN: AgentRow[] = [
-  { name: 'Voice Lead', price: '€59/month', status: 'live' },
-  { name: 'Lead Scout', price: '€99/month', status: 'live' },
-  { name: 'Pre-Call Brief', price: '€69/month', status: 'coming-soon' },
-  { name: 'Follow-Up Radar', price: '€49/month', status: 'coming-soon' },
+  { name: 'Lead Scout',   price: '€169/month' },
+  { name: 'Voice Lead',   price: '€149/month' },
+  { name: 'Client Brief', price: '€129/month' },
+  { name: 'Sales Radar',  price: '€109/month' },
 ]
 
 export function Pricing({ dict, lang }: PricingProps) {
@@ -41,7 +39,6 @@ export function Pricing({ dict, lang }: PricingProps) {
 
   const headerAgent = isEN ? 'Agent' : 'Agente'
   const headerPrice = isEN ? 'Monthly price' : 'Prezzo mensile'
-  const headerStatus = 'Status'
 
   const discountTitle = isEN ? 'Composition discounts' : 'Sconti composizione'
   const discountLines = isEN
@@ -50,39 +47,38 @@ export function Pricing({ dict, lang }: PricingProps) {
 
   const exampleLabel = isEN ? 'Example' : 'Esempio'
   const exampleText = isEN
-    ? 'A construction company activates Voice Lead + Follow-Up Radar. Setup: €300 one-time. Monthly: €59 + €49 = €108, with 2-agent discount: €97.20/month.'
-    : "Un'azienda edile attiva Voice Lead + Follow-Up Radar. Setup: €300 una tantum. Mensile: €59 + €49 = €108, con sconto 2 agenti: €97,20/mese."
+    ? 'Start with one agent, then add the others as the sales system grows.'
+    : 'Parti con un agente, poi aggiungi gli altri quando il sistema vendite cresce.'
 
   const ctaText = pricing?.cta ?? (isEN ? 'Find out what you need' : 'Scopri cosa ti serve')
   const agents = isEN ? agentsEN : agentsIT
 
   return (
-    <section aria-labelledby="pricing-heading" className="bg-slate-50 py-12 md:py-16 lg:py-20">
+    <section id="pricing" aria-labelledby="pricing-heading" className="bg-[#f5f3ef] py-14 md:py-20 lg:py-24">
       <Container>
-        <h2 id="pricing-heading" className="reveal text-3xl md:text-4xl font-bold text-slate-800 leading-[1.2]">
+        <p className="mb-4 font-heading text-[11px] font-black uppercase tracking-[0.18em] text-sky-700/70">
+          {isEN ? 'PRICING' : 'PREZZI'}
+        </p>
+        <h2 id="pricing-heading" className="font-heading text-4xl font-black leading-[1] text-sky-950 md:text-6xl">
           {headline}
         </h2>
 
-        <p className="text-lg font-semibold text-slate-700 mt-3">
+        <p className="mt-5 max-w-3xl text-xl font-semibold leading-relaxed text-sky-950">
           {setupLine}
         </p>
-        <p className="text-base text-slate-600 mt-2 mb-8">
+        <p className="mb-8 mt-2 text-lg text-sky-900/72">
           {noBind}
         </p>
 
-        {/* Pricing table — semantic <table> for screen readers */}
-        <div className="rounded-xl border border-slate-200 overflow-hidden">
+        <div className="overflow-hidden rounded-[22px] border border-sky-100 bg-white shadow-[0_18px_55px_rgba(8,47,73,0.08)]">
           <table className="w-full border-collapse">
-            <thead className="bg-slate-100">
+            <thead className="bg-sky-950">
               <tr>
-                <th scope="col" className="text-sm font-semibold text-slate-600 uppercase tracking-wide text-left px-6 py-3">
+                <th scope="col" className="px-4 py-4 text-left font-heading text-sm font-black text-white md:px-6">
                   {headerAgent}
                 </th>
-                <th scope="col" className="text-sm font-semibold text-slate-600 uppercase tracking-wide text-left px-6 py-3">
+                <th scope="col" className="px-4 py-4 text-left font-heading text-sm font-black text-white md:px-6">
                   {headerPrice}
-                </th>
-                <th scope="col" className="text-sm font-semibold text-slate-600 uppercase tracking-wide text-left px-6 py-3 hidden md:table-cell">
-                  {headerStatus}
                 </th>
               </tr>
             </thead>
@@ -91,23 +87,15 @@ export function Pricing({ dict, lang }: PricingProps) {
                 <tr
                   key={agent.name}
                   className={[
-                    'reveal hover:bg-slate-100 transition-colors',
-                    idx < agents.length - 1 ? 'border-b border-slate-200' : '',
+                    'transition-colors hover:bg-sky-50',
+                    idx < agents.length - 1 ? 'border-b border-sky-100' : '',
                   ].join(' ')}
                 >
-                  <td className="px-6 py-4 text-base font-semibold text-slate-800">
+                  <td className="px-4 py-4 font-heading text-base font-black text-sky-950 md:px-6">
                     {agent.name}
                   </td>
-                  <td
-                    className={[
-                      'px-6 py-4 text-2xl font-extrabold',
-                      agent.status === 'live' ? 'text-navy-900' : 'text-slate-300',
-                    ].join(' ')}
-                  >
+                  <td className="px-4 py-4 font-heading text-2xl font-black text-sky-950 md:px-6">
                     {agent.price}
-                  </td>
-                  <td className="px-6 py-4 hidden md:table-cell">
-                    <Badge variant={agent.status} />
                   </td>
                 </tr>
               ))}
@@ -116,19 +104,31 @@ export function Pricing({ dict, lang }: PricingProps) {
         </div>
 
         {/* Discount callout */}
-        <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 mt-6">
-          <p className="text-sm font-semibold text-amber-800 mb-2">{discountTitle}</p>
+        <div className="mt-6 rounded-[22px] bg-lime-300 p-5 shadow-[0_18px_55px_rgba(8,47,73,0.08)]">
+          <p className="mb-2 font-heading text-base font-black text-sky-950">{discountTitle}</p>
           <ul className="space-y-1">
             {discountLines.map((line) => (
-              <li key={line} className="text-sm text-amber-700">
+              <li key={line} className="text-base font-semibold text-sky-950">
                 {line}
               </li>
             ))}
           </ul>
-          <div className="mt-3 pt-3 border-t border-amber-200">
-            <p className="text-xs font-semibold text-amber-700 uppercase tracking-wide mb-1">{exampleLabel}</p>
-            <p className="text-sm text-amber-700">{exampleText}</p>
+          <div className="mt-4 border-t border-sky-950/18 pt-3">
+            <p className="mb-1 font-heading text-sm font-black text-sky-950">{exampleLabel}</p>
+            <p className="text-base font-semibold text-sky-950">{exampleText}</p>
           </div>
+        </div>
+
+        {/* Custom agents note */}
+        <div className="mt-5 rounded-[18px] border border-sky-100 bg-white px-6 py-5">
+          <p className="font-heading text-base font-black text-sky-950">
+            {isEN ? 'Custom agents' : 'Agenti custom'}
+          </p>
+          <p className="mt-1 text-base leading-relaxed text-sky-900/70">
+            {isEN
+              ? 'We build agents tailored to your specific use case. Price varies by type and complexity — ask us.'
+              : 'Costruiamo agenti su misura per le tue esigenze specifiche. Il costo dipende dal tipo e dalla complessità — scrivici.'}
+          </p>
         </div>
 
         {/* CTA */}

@@ -14,48 +14,46 @@ interface DeliveryProps {
 const stepsIT: DeliveryStep[] = [
   {
     number: 1,
-    title: 'Chiamata 30 min',
-    description: 'Descrivi come lavora il tuo team',
+    title: 'Mappa',
+    description: 'Capire dove nascono attriti e dati dispersi',
   },
   {
     number: 2,
-    title: 'Configurazione',
-    description: 'Noi configuriamo gli agenti',
+    title: 'Componi',
+    description: 'Scegliere gli agenti utili adesso',
   },
   {
     number: 3,
-    title: 'Onboarding team',
-    description: '30 minuti per il tuo team',
+    title: 'Collega',
+    description: 'Integrare strumenti e dati esistenti',
   },
   {
     number: 4,
-    title: 'Operativo',
-    description: 'Dal contratto al primo agente: ',
-    emphasisWord: 'una settimana',
+    title: 'Parti',
+    description: 'Usare il primo agente con il team',
   },
 ]
 
 const stepsEN: DeliveryStep[] = [
   {
     number: 1,
-    title: '30-min call',
-    description: 'Tell us how your team operates',
+    title: 'Map',
+    description: 'Find friction and scattered data',
   },
   {
     number: 2,
-    title: 'Configuration',
-    description: 'We configure the agents',
+    title: 'Compose',
+    description: 'Pick the agents that matter now',
   },
   {
     number: 3,
-    title: 'Team onboarding',
-    description: '30 minutes for your team',
+    title: 'Connect',
+    description: 'Integrate current tools and data',
   },
   {
     number: 4,
-    title: 'Live',
-    description: 'From signed contract to first agent: ',
-    emphasisWord: 'one week',
+    title: 'Launch',
+    description: 'Use the first agent with the team',
   },
 ]
 
@@ -71,31 +69,33 @@ export function Delivery({ dict }: DeliveryProps) {
   const steps = isEN ? stepsEN : stepsIT
 
   return (
-    <section aria-labelledby="delivery-heading" className="bg-slate-100 py-12 md:py-16 lg:py-20">
+    <section id="delivery" aria-labelledby="delivery-heading" className="bg-white py-14 md:py-20 lg:py-24">
       <Container>
-        <h2 id="delivery-heading" className="reveal text-3xl md:text-4xl font-bold text-slate-800 leading-[1.2]">
+        <p className="mb-4 font-heading text-[11px] font-black uppercase tracking-[0.18em] text-sky-700/70">
+          {isEN ? 'How it works' : 'Come funziona'}
+        </p>
+        <h2 id="delivery-heading" className="font-heading text-4xl font-black leading-[1] text-sky-950 md:text-6xl">
           {headline}
         </h2>
-        <p className="text-base lg:text-lg text-slate-600 mt-3 mb-10">
+        <p className="mt-5 max-w-2xl text-lg font-medium leading-relaxed text-sky-900/72">
           {subheadline}
         </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mt-8">
+        <div className="mt-10 grid grid-cols-1 gap-4 md:grid-cols-4">
           {steps.map((step) => (
-            <div key={step.number} className="reveal flex flex-col items-start gap-3">
-              {/* Step number circle */}
-              <div className="flex items-center justify-center w-10 h-10 rounded-full bg-navy-900 text-white font-bold text-base flex-shrink-0">
+            <div key={step.number} className="rounded-[18px] border border-sky-100 bg-sky-50/70 p-5 shadow-[0_14px_40px_rgba(8,47,73,0.07)]">
+              <div className="mb-5 flex h-11 w-11 items-center justify-center rounded-full bg-sky-950 font-heading text-lg font-black text-lime-300">
                 {step.number}
               </div>
 
               <div>
-                <h3 className="text-base font-bold text-slate-800 leading-snug">
+                <h3 className="font-heading text-xl font-black leading-snug text-sky-950">
                   {step.title}
                 </h3>
-                <p className="text-sm text-slate-600 mt-1 leading-relaxed">
+                <p className="mt-2 text-base leading-relaxed text-sky-900/70">
                   {step.description}
                   {step.emphasisWord && (
-                    <strong className="font-bold text-slate-800">{step.emphasisWord}</strong>
+                    <strong className="font-black text-ink-950">{step.emphasisWord}</strong>
                   )}
                 </p>
               </div>

@@ -1,87 +1,54 @@
+'use client'
+
+import { useState } from 'react'
+import { ChevronDown } from 'lucide-react'
+import type { LucideIcon } from 'lucide-react'
+
 export type AgentData = {
   name: string
   tagline: string
-  badge: 'live' | 'coming-soon'
-  beforeValue: string
-  afterValue: string
-  beforeLabel: string
-  afterLabel: string
   trigger: string
   description: string
+  Icon: LucideIcon
+  className?: string
 }
 
-export function AgentCard({
-  name,
-  tagline,
-  badge,
-  beforeValue,
-  afterValue,
-  beforeLabel,
-  afterLabel,
-  trigger,
-  description,
-}: AgentData) {
+export function AgentCard({ name, tagline, trigger, description, Icon, className = '' }: AgentData) {
+  const [open, setOpen] = useState(false)
+
   return (
     <div
-      role="article"
-      tabIndex={0}
-      className="
-        relative bg-white rounded-xl p-6 border border-slate-200
-        min-h-[280px] cursor-pointer
-        hover:shadow-[0_10px_30px_rgba(15,35,73,0.12)]
-        hover:-translate-y-1 hover:border-slate-300
-        focus-visible:outline focus-visible:outline-[3px] focus-visible:outline-amber-400 focus-visible:outline-offset-2
-        transition-all duration-200
-      "
+      className={[
+        'overflow-hidden rounded-2xl border border-gray-200 bg-white transition-shadow',
+        open ? 'shadow-md' : 'hover:shadow-sm',
+        className,
+      ].join(' ')}
     >
-      {/* Badge — top-right absolute */}
-      <div className="absolute top-4 right-4">
-        {badge === 'live' ? (
-          <span className="inline-flex items-center gap-1 rounded-full px-2 py-1 text-[11px] font-bold uppercase tracking-[0.05em] bg-[#22C55E] text-white">
-            <span className="inline-block w-1.5 h-1.5 rounded-full bg-white animate-[live-pulse_2s_ease-in-out_infinite]" aria-hidden="true" />
-            LIVE
-          </span>
-        ) : (
-          <span className="inline-flex items-center rounded-full px-2 py-1 text-[11px] font-semibold uppercase tracking-[0.04em] bg-slate-300 text-slate-600">
-            COMING SOON
-          </span>
-        )}
-      </div>
-
-      {/* Agent name — right-padded to prevent overlap with badge */}
-      <h3 className="text-xl font-bold text-slate-800 pr-20 leading-snug">
-        {name}
-      </h3>
-
-      {/* Tagline */}
-      <p className="text-sm text-slate-500 mt-1">{tagline}</p>
-
-      {/* Before / After stats block */}
-      <div className="flex items-end gap-3 mt-4">
-        <div className="flex flex-col items-start">
-          <span className="text-2xl font-extrabold text-slate-500 leading-tight">
-            {beforeValue}
-          </span>
-          <span className="text-xs text-slate-400 mt-0.5">{beforeLabel}</span>
+      <button
+        className="flex w-full items-center justify-between gap-4 px-6 py-5 text-left"
+        onClick={() => setOpen((v) => !v)}
+        aria-expanded={open}
+      >
+        <div className="flex items-center gap-4">
+          <div className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-sky-50">
+            <Icon size={20} className="text-sky-600" aria-hidden="true" />
+          </div>
+          <p className="font-heading text-xl font-black text-[#0a1628]">{name}</p>
         </div>
+        <ChevronDown
+          size={20}
+          className={['shrink-0 text-gray-400 transition-transform duration-200', open ? 'rotate-180' : ''].join(' ')}
+          aria-hidden="true"
+        />
+      </button>
 
-        <span className="text-slate-300 text-xl font-bold mb-5">→</span>
-
-        <div className="flex flex-col items-start">
-          <span className="text-2xl font-extrabold text-amber-500 leading-tight">
-            {afterValue}
-          </span>
-          <span className="text-xs text-slate-400 mt-0.5">{afterLabel}</span>
+      {open && (
+        <div className="border-t border-gray-100 px-6 pb-6 pt-4">
+          <p className="text-base font-semibold leading-relaxed text-[#0a1628]/60">{tagline}</p>
+          <p className="mt-4 font-heading text-base font-black text-[#0a1628]">{trigger}</p>
+          <p className="mt-2 text-base leading-relaxed text-gray-500">{description}</p>
         </div>
-      </div>
-
-      {/* Trigger line */}
-      <p className="text-sm font-semibold text-slate-700 mt-3">{trigger}</p>
-
-      {/* Description */}
-      <p className="text-sm text-slate-600 leading-relaxed mt-2">
-        {description}
-      </p>
+      )}
     </div>
   )
 }
