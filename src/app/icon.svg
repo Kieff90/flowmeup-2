@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <defs>
+    <linearGradient id="ring-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%"   stop-color="#3B82F6"/>
+      <stop offset="45%"  stop-color="#8B5CF6"/>
+      <stop offset="100%" stop-color="#F97316"/>
+    </linearGradient>
+    <mask id="donut">
+      <circle cx="50" cy="50" r="49" fill="white"/>
+      <circle cx="50" cy="50" r="27" fill="black"/>
+    </mask>
+  </defs>
+
+  <!-- Gradient ring -->
+  <circle cx="50" cy="50" r="49" fill="url(#ring-grad)" mask="url(#donut)"/>
+
+  <!-- White crescent arc (upper-left) -->
+  <path d="M14 42 Q18 10 52 11 Q28 14 24 44 Z" fill="white" opacity="0.92"/>
+
+  <!-- White sparkle dots (right arc) -->
+  <circle cx="76" cy="19" r="3.2" fill="white" opacity="0.90"/>
+  <circle cx="83" cy="30" r="2.4" fill="white" opacity="0.70"/>
+  <circle cx="86" cy="43" r="1.7" fill="white" opacity="0.50"/>
+</svg>
