@@ -16,12 +16,7 @@ export type SubmitResult = {
 
 export async function submitForm(data: FormData): Promise<SubmitResult> {
   try {
-    const endpoint = process.env.FORMSPREE_ENDPOINT
-    if (!endpoint) {
-      // Dev fallback: log and return success
-      console.log('[submitForm] No FORMSPREE_ENDPOINT configured. Form data:', data)
-      return { success: true }
-    }
+    const endpoint = process.env.FORMSPREE_ENDPOINT ?? 'https://formspree.io/f/xjgzevzq'
     const res = await fetch(endpoint, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
