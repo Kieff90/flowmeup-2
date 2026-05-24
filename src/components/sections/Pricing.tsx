@@ -31,8 +31,8 @@ export function Pricing({ dict, lang }: PricingProps) {
 
   const headline = pricing?.headline ?? (isEN ? 'Clear pricing. You pay only for what you use.' : 'Prezzi chiari. Paghi solo quello che usi.')
   const setupLine = pricing?.setup ?? (isEN
-    ? 'One-time setup fee: €300 — covers configuration, integration with your data store, and team onboarding.'
-    : 'Setup una tantum: €300 — include configurazione, integrazione con i tuoi dati, e onboarding del team.')
+    ? 'One-time setup fee: €300. Covers configuration, integration with your data store, and team onboarding.'
+    : 'Setup una tantum: €300. Include configurazione, integrazione con i tuoi dati, e onboarding del team.')
   const noBind = pricing?.noBind ?? (isEN
     ? 'Then you pay only for the agents you activate, month by month. No annual contracts.'
     : 'Poi paghi solo gli agenti che attivi, mese per mese. Nessun contratto annuale.')
@@ -126,8 +126,8 @@ export function Pricing({ dict, lang }: PricingProps) {
           </p>
           <p className="mt-1 text-base leading-relaxed text-sky-900/70">
             {isEN
-              ? 'We build agents tailored to your specific use case. Price varies by type and complexity — ask us.'
-              : 'Costruiamo agenti su misura per le tue esigenze specifiche. Il costo dipende dal tipo e dalla complessità — scrivici.'}
+              ? 'We build agents tailored to your specific use case. Price varies by type and complexity: ask us.'
+              : 'Costruiamo agenti su misura per le tue esigenze specifiche. Il costo dipende dal tipo e dalla complessità: scrivici.'}
           </p>
         </div>
 

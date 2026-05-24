@@ -38,7 +38,7 @@ export function Differentiator({ dict }: DifferentiatorProps) {
           style={{ transitionDelay: '300ms' }}
         >
           <p className="mb-4 inline-block rounded-full bg-sky-950 px-4 py-1.5 font-heading text-sm font-black text-lime-300">
-            {isEN ? '⚡ Real-time — available to the whole team in seconds' : '⚡ In tempo reale — disponibile a tutto il team in pochi secondi'}
+            {isEN ? 'Real-time, available to the whole team in seconds' : 'In tempo reale, disponibile a tutto il team in pochi secondi'}
           </p>
           <p className="text-xl font-semibold leading-relaxed text-sky-950">{body}</p>
         </div>

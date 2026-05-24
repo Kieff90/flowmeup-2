@@ -30,7 +30,7 @@
   },
   "differentiator": {
     "headline": "Tutto quello che sa il team, lo sa anche Flowmeup.",
-    "body": "Gli agenti condividono la stessa memoria aziendale. Un lead registrato oggi è disponibile a tutto il team in tempo reale — che lo inserisca Marco dal telefono o Giulia dal CRM. Nessun re-briefing, nessun copia-incolla, nessun foglio parallelo."
+    "body": "Gli agenti condividono la stessa memoria aziendale. Un lead registrato oggi è disponibile a tutto il team in tempo reale, che lo inserisca Marco dal telefono o Giulia dal CRM. Nessun re-briefing, nessun copia-incolla, nessun foglio parallelo."
   },
   "delivery": {
     "headline": "Operativi entro una settimana.",
@@ -38,7 +38,7 @@
   },
   "pricing": {
     "headline": "Prezzi chiari. Paghi quello che usi.",
-    "setup": "Setup €300 — configurazione, integrazione, onboarding inclusi.",
+    "setup": "Setup €300: configurazione, integrazione, onboarding inclusi.",
     "noBind": "Poi solo gli agenti che attivi, mese per mese. Nessun contratto annuale.",
     "cta": "Scopri cosa ti serve"
   },

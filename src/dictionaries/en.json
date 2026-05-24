@@ -30,7 +30,7 @@
   },
   "differentiator": {
     "headline": "What the team knows, Flowmeup knows.",
-    "body": "All agents share the same company memory. A lead logged today is available to the whole team in real time — whether Marco added it from his phone or Giulia from the CRM. No re-briefing, no copy-pasting, no parallel spreadsheets."
+    "body": "All agents share the same company memory. A lead logged today is available to the whole team in real time, whether Marco added it from his phone or Giulia from the CRM. No re-briefing, no copy-pasting, no parallel spreadsheets."
   },
   "delivery": {
     "headline": "Live within one week.",
@@ -38,7 +38,7 @@
   },
   "pricing": {
     "headline": "Clear pricing. Pay for what you use.",
-    "setup": "One-time setup €300 — configuration, integration, onboarding included.",
+    "setup": "One-time setup €300: configuration, integration, onboarding included.",
     "noBind": "Then only the agents you activate, month by month. No annual contracts.",
     "cta": "Find out what you need"
   },

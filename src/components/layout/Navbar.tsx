@@ -26,7 +26,7 @@ export function Navbar({ dict, lang }: NavbarProps) {
         <nav aria-label="Main navigation" className="flex h-16 items-center justify-between gap-6">
           <a
             href={`/${lang}`}
-            className="font-heading text-xl font-black tracking-tight text-sky-950"
+            className="font-heading text-xl font-black tracking-tight bg-gradient-to-r from-blue-500 to-violet-500 bg-clip-text text-transparent"
           >
             Flowmeup
           </a>
