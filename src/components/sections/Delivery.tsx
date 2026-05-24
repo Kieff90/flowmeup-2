@@ -1,4 +1,5 @@
 import { Container } from '@/components/ui/Container'
+import type { Locale } from '@/types/i18n'
 
 interface DeliveryStep {
   number: number
@@ -9,6 +10,7 @@ interface DeliveryStep {
 
 interface DeliveryProps {
   dict: Record<string, unknown>
+  lang: Locale
 }
 
 const stepsIT: DeliveryStep[] = [
@@ -57,15 +59,17 @@ const stepsEN: DeliveryStep[] = [
   },
 ]
 
-export function Delivery({ dict }: DeliveryProps) {
+export function Delivery({ dict, lang }: DeliveryProps) {
   const delivery = dict.delivery as Record<string, string> | undefined
+  const isEN = lang === 'en'
   const headline =
-    delivery?.headline ?? 'Raccontaci il tuo processo. Noi configuriamo. Sei operativo entro una settimana.'
+    delivery?.headline ?? (isEN
+      ? 'Live within one week.'
+      : 'Raccontaci il tuo processo. Noi configuriamo. Sei operativo entro una settimana.')
   const subheadline =
-    delivery?.subheadline ?? 'Done-for-you. Il tuo team non installa nulla e non segue nessun corso. Flowmeup si occupa di tutto.'
-
-  // Determine language from dictionary content
-  const isEN = typeof delivery?.headline === 'string' && delivery.headline.includes('Tell us')
+    delivery?.subheadline ?? (isEN
+      ? 'Done for you. Tell us how your team works. We configure everything.'
+      : 'Done-for-you. Il tuo team non installa nulla e non segue nessun corso. Flowmeup si occupa di tutto.')
   const steps = isEN ? stepsEN : stepsIT
 
   return (

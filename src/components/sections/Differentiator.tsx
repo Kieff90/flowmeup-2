@@ -3,18 +3,25 @@ import { useScrollReveal } from '@/hooks/useScrollReveal'
 
 // {/* TODO v2: minimal agent→memory diagram */}
 
+import type { Locale } from '@/types/i18n'
+
 interface DifferentiatorProps {
   dict: Record<string, unknown>
+  lang: Locale
 }
 
-export function Differentiator({ dict }: DifferentiatorProps) {
+export function Differentiator({ dict, lang }: DifferentiatorProps) {
   const headingRef = useScrollReveal<HTMLHeadingElement>()
   const bodyRef = useScrollReveal<HTMLParagraphElement>()
 
   const d = dict.differentiator as Record<string, string> | undefined
-  const headline = d?.headline ?? 'Quello che registra il commerciale oggi, il titolare lo vede stasera.'
-  const body = d?.body ?? 'Tutti gli agenti lavorano sulla stessa memoria. Quando Marco registra Bianchi Costruzioni con Voice Lead, la sera il titolare può chiedere "cosa sappiamo di Bianchi?" e avere la risposta completa. Nessun re-briefing, nessun "chiedilo a Mario", nessun copia-incolla tra fogli diversi. Il dato entra una volta e resta disponibile per tutto il team.'
-  const isEN = headline.startsWith('Shared')
+  const headline = d?.headline ?? (lang === 'en'
+    ? 'What the team knows, Flowmeup knows.'
+    : 'Tutto quello che sa il team, lo sa anche Flowmeup.')
+  const body = d?.body ?? (lang === 'en'
+    ? 'All agents share the same company memory. A lead logged today is available to the whole team in real time, whether Marco added it from his phone or Giulia from the CRM. No re-briefing, no copy-pasting, no parallel spreadsheets.'
+    : 'Gli agenti condividono la stessa memoria aziendale. Un lead registrato oggi è disponibile a tutto il team in tempo reale, che lo inserisca Marco dal telefono o Giulia dal CRM. Nessun re-briefing, nessun copia-incolla, nessun foglio parallelo.')
+  const isEN = lang === 'en'
 
   return (
     <section aria-labelledby="differentiator-heading" className="bg-lime-300 py-14 md:py-20 lg:py-24">

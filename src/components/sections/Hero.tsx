@@ -114,13 +114,16 @@ function CardRadarCommerciale({ isEN }: { isEN: boolean }) {
   )
 }
 
+import type { Locale } from '@/types/i18n'
+
 interface HeroProps {
   dict: Record<string, unknown>
+  lang: Locale
 }
 
-export function Hero({ dict }: HeroProps) {
+export function Hero({ dict, lang }: HeroProps) {
   const hero = dict.hero as Record<string, string> | undefined
-  const isEN = (hero?.headline ?? '').startsWith('AI')
+  const isEN = lang === 'en'
 
   const headline     = hero?.headline     ?? (isEN ? 'AI agents for faster sales'        : 'Agenti AI per vendite più veloci')
   const subheadline  = hero?.subheadline  ?? (isEN

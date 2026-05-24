@@ -3,15 +3,18 @@ import { FileSpreadsheet, MessageCircle, Send, Database, Wrench } from 'lucide-r
 import { Container } from '@/components/ui/Container'
 import { useScrollReveal } from '@/hooks/useScrollReveal'
 
+import type { Locale } from '@/types/i18n'
+
 interface SolutionProps {
   dict: Record<string, unknown>
+  lang: Locale
 }
 
-export function Solution({ dict }: SolutionProps) {
+export function Solution({ dict, lang }: SolutionProps) {
   const solution = dict.solution as Record<string, string> | undefined
   const headline = solution?.headline ?? ''
   const body = solution?.body ?? ''
-  const isEN = headline.startsWith('Pick')
+  const isEN = lang === 'en'
 
   const headingRef = useScrollReveal<HTMLHeadingElement>()
   const bodyRef = useScrollReveal<HTMLDivElement>()

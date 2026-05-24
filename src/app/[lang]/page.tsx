@@ -23,12 +23,12 @@ export default async function HomePage({
     <>
       <Navbar dict={dict} lang={lang} />
       <main>
-        <Hero dict={dict} />
-        <Problem dict={dict} />
-        <Solution dict={dict} />
+        <Hero dict={dict} lang={lang} />
+        <Problem dict={dict} lang={lang} />
+        <Solution dict={dict} lang={lang} />
         <AgentCards lang={lang} dict={dict} />
-        <Differentiator dict={dict} />
-        <Delivery dict={dict} />
+        <Differentiator dict={dict} lang={lang} />
+        <Delivery dict={dict} lang={lang} />
         <Pricing dict={dict} lang={lang} />
         <ContactForm dict={dict} lang={lang} />
       </main>

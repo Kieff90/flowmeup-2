@@ -2,16 +2,19 @@
 import { Container } from '@/components/ui/Container'
 import { useScrollReveal } from '@/hooks/useScrollReveal'
 
+import type { Locale } from '@/types/i18n'
+
 interface ProblemProps {
   dict: Record<string, unknown>
+  lang: Locale
 }
 
-export function Problem({ dict }: ProblemProps) {
+export function Problem({ dict, lang }: ProblemProps) {
   const problem = dict.problem as Record<string, string> | undefined
   const headline = problem?.headline ?? ''
   const para1 = problem?.para1 ?? ''
   const para2 = problem?.para2 ?? ''
-  const isEN = headline.startsWith('Fewer')
+  const isEN = lang === 'en'
 
   const headingRef = useScrollReveal<HTMLHeadingElement>()
   const bodyRef = useScrollReveal<HTMLDivElement>()
@@ -22,7 +25,7 @@ export function Problem({ dict }: ProblemProps) {
         <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
           <div>
             <p className="mb-4 font-heading text-[11px] font-black uppercase tracking-[0.18em] text-sky-700/70">
-              {isEN ? 'Why it matters' : 'Perche conta'}
+              {isEN ? 'Why it matters' : 'Perché conta'}
             </p>
           <h2
             id="problem-heading"
