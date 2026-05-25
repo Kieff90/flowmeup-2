@@ -1,10 +1,13 @@
 import { Container } from '@/components/ui/Container'
+import { ConsentReset } from '@/components/analytics/ConsentBanner'
+import type { Locale } from '@/types/i18n'
 
 interface FooterProps {
   dict: Record<string, unknown>
+  lang?: Locale
 }
 
-export function Footer({ dict }: FooterProps) {
+export function Footer({ dict, lang = 'it' }: FooterProps) {
   const footer = dict.footer as Record<string, string> | undefined
   const copyright = footer?.copyright ?? '© 2025 Flowmeup.'
 
@@ -24,6 +27,7 @@ export function Footer({ dict }: FooterProps) {
       <Container className="flex flex-col gap-3 py-5 sm:flex-row sm:items-center sm:justify-between">
         <p className="text-sky-300 text-sm">{copyright}</p>
         <div className="flex items-center gap-4">
+          <ConsentReset lang={lang} />
           <a
             href="https://www.linkedin.com/company/flowmeup"
             target="_blank"

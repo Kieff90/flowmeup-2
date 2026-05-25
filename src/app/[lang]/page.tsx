@@ -32,7 +32,7 @@ export default async function HomePage({
         <Pricing dict={dict} lang={lang} />
         <ContactForm dict={dict} lang={lang} />
       </main>
-      <Footer dict={dict} />
+      <Footer dict={dict} lang={lang} />
     </>
   )
 }
