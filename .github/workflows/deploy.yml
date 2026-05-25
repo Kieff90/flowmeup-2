@@ -17,10 +17,6 @@ jobs:
           script: |
             set -e
             cd ~/landipages/flowmeup-2
-            echo "=== git pull ==="
             git pull
-            echo "=== npm run build ==="
             npm run build
-            echo "=== pm2 restart ==="
             pm2 restart sellingagent
-            echo "=== done ==="
