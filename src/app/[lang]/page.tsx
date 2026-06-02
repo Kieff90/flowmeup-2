@@ -5,6 +5,7 @@ import { Footer } from '@/components/layout/Footer'
 import { Hero } from '@/components/sections/Hero'
 import { Problem } from '@/components/sections/Problem'
 import { Solution } from '@/components/sections/Solution'
+import { VideoLoop } from '@/components/sections/VideoLoop'
 import { AgentCards } from '@/components/sections/AgentCards'
 import { Differentiator } from '@/components/sections/Differentiator'
 import { Delivery } from '@/components/sections/Delivery'
@@ -26,6 +27,7 @@ export default async function HomePage({
         <Hero dict={dict} lang={lang} />
         <Problem dict={dict} lang={lang} />
         <Solution dict={dict} lang={lang} />
+        <VideoLoop lang={lang} />
         <AgentCards lang={lang} dict={dict} />
         <Differentiator dict={dict} lang={lang} />
         <Delivery dict={dict} lang={lang} />

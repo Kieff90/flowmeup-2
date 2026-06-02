@@ -1,0 +1,24 @@
+{
+  "name": "flowmeup-remotion",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "remotion studio",
+    "render": "remotion render ArexFlow public/videos/arex-flow.mp4 --codec h264",
+    "render:webm": "remotion render ArexFlow ../public/videos/arex-flow.webm --codec vp9",
+    "render:mp4": "remotion render ArexFlow ../public/videos/arex-flow.mp4 --codec h264"
+  },
+  "dependencies": {
+    "@remotion/cli": "^4.0.471",
+    "@remotion/google-fonts": "^4.0.471",
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7",
+    "remotion": "^4.0.471"
+  },
+  "devDependencies": {
+    "@types/react": "^19.2.16",
+    "@types/react-dom": "^19.2.3",
+    "typescript": "^6.0.3"
+  }
+}
