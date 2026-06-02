@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 
-const title = 'Flowmeup, agenti AI per la forza vendita'
-const description = 'Registra un vocale, l\'AI compila il CRM al posto tuo.'
+const title = 'Flowmeup, l’AI che semplifica il processo vendita'
+const description = 'Meno attività manuali, più controllo su contatti, offerte e trattative.'
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://salesagent.flowmeup.me'),
@@ -13,10 +13,10 @@ export const metadata: Metadata = {
     siteName: 'Flowmeup',
     locale: 'it_IT',
     type: 'website',
-    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: title }],
+    images: [{ url: '/og-image.png', width: 600, height: 600, alt: title }],
   },
   twitter: {
-    card: 'summary_large_image',
+    card: 'summary',
     title,
     description,
     images: ['/og-image.png'],
